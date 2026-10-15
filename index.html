@@ -1,2 +1,761 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OT Reubicación — 07/10/2026</title><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#f0efea;padding:20px;color:#111}code{font-family:'Courier New',monospace;background:#ebebea;padding:1px 5px;border-radius:3px;font-size:13px;font-weight:700}.fab{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:8px;z-index:100}.fab button{padding:10px 18px;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);font-family:inherit;white-space:nowrap}#progress-bar{height:5px;background:#e0e0e0;border-radius:3px;margin-bottom:14px;overflow:hidden}#progress-fill{height:100%;background:#1D9E75;border-radius:3px;transition:width .3s}#progress-lbl{font-size:10px;color:#888;margin-bottom:10px}.swapgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}@media(max-width:480px){.swapgrid{grid-template-columns:1fr}}@media print{body{background:#fff;padding:8px}.fab{display:none}textarea{border:1px solid #ddd!important}}@page{size:A4;margin:12mm 10mm}</style></head><body><div style="max-width:720px;margin:0 auto"><div style="background:#111;border-radius:10px;padding:18px 24px;margin-bottom:14px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:16px"><div><div style="font-size:10px;opacity:.5;letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px">ACB Iluminación · Consulta Ubicaciones</div><h1 style="font-size:18px;font-weight:800;margin-bottom:4px">Orden de Trabajo — Reubicación</h1><div style="font-size:11px;opacity:.6">📅 07/10/2026 · 07:12 &nbsp;·&nbsp; 7 movimientos</div></div><div style="display:flex;gap:20px;flex-wrap:wrap;text-align:center"><div><span style="font-size:22px;font-weight:800;color:#7FD9B0">7</span><div style="font-size:10px;color:rgba(255,255,255,.6)">Mover Refs</div></div></div></div><div id="progress-bar"><div id="progress-fill" style="width:0%"></div></div><div id="progress-lbl">0 de 7 tareas completadas</div><div style="background:#fff;border:1px solid #ddd;border-radius:8px;padding:10px 16px;margin-bottom:14px;display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div style="font-size:9px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px">Tipo:</div><div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#555"><span style="width:9px;height:9px;border-radius:50%;background:#378ADD;display:inline-block"></span>INTERCAMBIO</div><div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#555"><span style="width:9px;height:9px;border-radius:50%;background:#EF9F27;display:inline-block"></span>TRASLADO COMPLETO</div><div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#555"><span style="width:9px;height:9px;border-radius:50%;background:#1D9E75;display:inline-block"></span>MOVER REFERENCIAS</div></div><div style="font-size:10px;color:#999;margin-bottom:12px">Marca cada tarea al completarla y añade observaciones si es necesario. Al terminar pulsa <b>Devolver OT</b>.</div><div id="card-task-0" style="background:#fff;border:1px solid #ddd;border-left:5px solid #1D9E75;border-radius:8px;padding:12px 16px;margin-bottom:12px;page-break-inside:avoid;transition:opacity .2s"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px"><div style="width:32px;height:32px;border-radius:6px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0">1</div><div style="flex:1;display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">B02342</span><span style="font-size:20px;color:#888">→</span><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">A13151</span><span style="font-size:9px;font-weight:700;padding:3px 10px;border-radius:4px;background:#1D9E75;color:#fff;letter-spacing:.5px">MOVER REFERENCIAS</span></div><label style="display:flex;align-items:center;gap:6px;cursor:pointer;flex-shrink:0"><input type="checkbox" id="chk-task-0" onchange="onCheck('task-0')" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75"><span id="chklbl-task-0" style="font-size:11px;color:#bbb;white-space:nowrap">Pendiente</span></label></div><div style="background:#E1F5EE;border-left:3px solid #1D9E75;border-radius:4px;padding:7px 12px;font-size:12px;color:#333;margin-bottom:8px">Mueve 1 referencia(s) de <code>B02342</code> a <code>A13151</code></div><div style="width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="width:100%;min-width:260px;border-collapse:collapse;font-size:11px;margin-top:8px"><thead><tr style="background:#f5f5f5;border-bottom:2px solid #e0e0e0"><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">REF</th><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Descripción</th><th style="padding:5px 8px;text-align:right;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Existencias</th></tr></thead><tbody><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:5px 8px;font-family:'Courier New',monospace;font-weight:700;font-size:12px;color:#111;white-space:nowrap">P3759171N</td><td style="padding:5px 8px;color:#555;font-size:11px">Munich Plafón 3759/60 Negro Texturado, LED 52W 3967lm, CRI90 CL.I, LED</td><td style="padding:5px 8px;text-align:right;color:#888;white-space:nowrap">26</td></tr></tbody></table></div><div style="margin-top:10px"><div style="font-size:9px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Observaciones del operario</div><textarea id="obs-task-0" placeholder="Escribe aquí cualquier incidencia o nota…" style="width:100%;min-height:48px;padding:7px 10px;border:1px solid #e0e0e0;border-radius:6px;font-size:11px;font-family:inherit;resize:vertical;color:#333;background:#fafafa;outline:none" onfocus="this.style.borderColor='#378ADD'" onblur="this.style.borderColor='#e0e0e0'" data-val=""></textarea></div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px"><span style="font-size:9px;color:#ccc">7/10/2026 07:09</span><span id="done-task-0" style="font-size:10px;color:#1D9E75;font-weight:600;display:none">✓ Completado</span></div></div><div id="card-task-1" style="background:#fff;border:1px solid #ddd;border-left:5px solid #1D9E75;border-radius:8px;padding:12px 16px;margin-bottom:12px;page-break-inside:avoid;transition:opacity .2s"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px"><div style="width:32px;height:32px;border-radius:6px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0">2</div><div style="flex:1;display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">B07242</span><span style="font-size:20px;color:#888">→</span><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">A12040</span><span style="font-size:9px;font-weight:700;padding:3px 10px;border-radius:4px;background:#1D9E75;color:#fff;letter-spacing:.5px">MOVER REFERENCIAS</span></div><label style="display:flex;align-items:center;gap:6px;cursor:pointer;flex-shrink:0"><input type="checkbox" id="chk-task-1" onchange="onCheck('task-1')" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75"><span id="chklbl-task-1" style="font-size:11px;color:#bbb;white-space:nowrap">Pendiente</span></label></div><div style="background:#E1F5EE;border-left:3px solid #1D9E75;border-radius:4px;padding:7px 12px;font-size:12px;color:#333;margin-bottom:8px">Mueve 1 referencia(s) de <code>B07242</code> a <code>A12040</code></div><div style="width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="width:100%;min-width:260px;border-collapse:collapse;font-size:11px;margin-top:8px"><thead><tr style="background:#f5f5f5;border-bottom:2px solid #e0e0e0"><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">REF</th><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Descripción</th><th style="padding:5px 8px;text-align:right;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Existencias</th></tr></thead><tbody><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:5px 8px;font-family:'Courier New',monospace;font-weight:700;font-size:12px;color:#111;white-space:nowrap">5PANT39166BLI</td><td style="padding:5px 8px;color:#555;font-size:11px">Aspen 3916/60 Pantalla Blanco/Lino</td><td style="padding:5px 8px;text-align:right;color:#888;white-space:nowrap">16</td></tr></tbody></table></div><div style="margin-top:10px"><div style="font-size:9px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Observaciones del operario</div><textarea id="obs-task-1" placeholder="Escribe aquí cualquier incidencia o nota…" style="width:100%;min-height:48px;padding:7px 10px;border:1px solid #e0e0e0;border-radius:6px;font-size:11px;font-family:inherit;resize:vertical;color:#333;background:#fafafa;outline:none" onfocus="this.style.borderColor='#378ADD'" onblur="this.style.borderColor='#e0e0e0'" data-val=""></textarea></div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px"><span style="font-size:9px;color:#ccc">7/10/2026 07:09</span><span id="done-task-1" style="font-size:10px;color:#1D9E75;font-weight:600;display:none">✓ Completado</span></div></div><div id="card-task-2" style="background:#fff;border:1px solid #ddd;border-left:5px solid #1D9E75;border-radius:8px;padding:12px 16px;margin-bottom:12px;page-break-inside:avoid;transition:opacity .2s"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px"><div style="width:32px;height:32px;border-radius:6px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0">3</div><div style="flex:1;display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">B01272</span><span style="font-size:20px;color:#888">→</span><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">A05290</span><span style="font-size:9px;font-weight:700;padding:3px 10px;border-radius:4px;background:#1D9E75;color:#fff;letter-spacing:.5px">MOVER REFERENCIAS</span></div><label style="display:flex;align-items:center;gap:6px;cursor:pointer;flex-shrink:0"><input type="checkbox" id="chk-task-2" onchange="onCheck('task-2')" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75"><span id="chklbl-task-2" style="font-size:11px;color:#bbb;white-space:nowrap">Pendiente</span></label></div><div style="background:#E1F5EE;border-left:3px solid #1D9E75;border-radius:4px;padding:7px 12px;font-size:12px;color:#333;margin-bottom:8px">Mueve 1 referencia(s) de <code>B01272</code> a <code>A05290</code></div><div style="width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="width:100%;min-width:260px;border-collapse:collapse;font-size:11px;margin-top:8px"><thead><tr style="background:#f5f5f5;border-bottom:2px solid #e0e0e0"><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">REF</th><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Descripción</th><th style="padding:5px 8px;text-align:right;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Existencias</th></tr></thead><tbody><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:5px 8px;font-family:'Courier New',monospace;font-weight:700;font-size:12px;color:#111;white-space:nowrap">5PANT404245BN</td><td style="padding:5px 8px;color:#555;font-size:11px">Kira Pantalla Ø450x375mm Blanco/Negro, E27</td><td style="padding:5px 8px;text-align:right;color:#888;white-space:nowrap">45</td></tr></tbody></table></div><div style="margin-top:10px"><div style="font-size:9px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Observaciones del operario</div><textarea id="obs-task-2" placeholder="Escribe aquí cualquier incidencia o nota…" style="width:100%;min-height:48px;padding:7px 10px;border:1px solid #e0e0e0;border-radius:6px;font-size:11px;font-family:inherit;resize:vertical;color:#333;background:#fafafa;outline:none" onfocus="this.style.borderColor='#378ADD'" onblur="this.style.borderColor='#e0e0e0'" data-val=""></textarea></div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px"><span style="font-size:9px;color:#ccc">7/10/2026 07:09</span><span id="done-task-2" style="font-size:10px;color:#1D9E75;font-weight:600;display:none">✓ Completado</span></div></div><div id="card-task-3" style="background:#fff;border:1px solid #ddd;border-left:5px solid #1D9E75;border-radius:8px;padding:12px 16px;margin-bottom:12px;page-break-inside:avoid;transition:opacity .2s"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px"><div style="width:32px;height:32px;border-radius:6px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0">4</div><div style="flex:1;display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">B05051</span><span style="font-size:20px;color:#888">→</span><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">A06050</span><span style="font-size:9px;font-weight:700;padding:3px 10px;border-radius:4px;background:#1D9E75;color:#fff;letter-spacing:.5px">MOVER REFERENCIAS</span></div><label style="display:flex;align-items:center;gap:6px;cursor:pointer;flex-shrink:0"><input type="checkbox" id="chk-task-3" onchange="onCheck('task-3')" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75"><span id="chklbl-task-3" style="font-size:11px;color:#bbb;white-space:nowrap">Pendiente</span></label></div><div style="background:#E1F5EE;border-left:3px solid #1D9E75;border-radius:4px;padding:7px 12px;font-size:12px;color:#333;margin-bottom:8px">Mueve 1 referencia(s) de <code>B05051</code> a <code>A06050</code></div><div style="width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="width:100%;min-width:260px;border-collapse:collapse;font-size:11px;margin-top:8px"><thead><tr style="background:#f5f5f5;border-bottom:2px solid #e0e0e0"><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">REF</th><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Descripción</th><th style="padding:5px 8px;text-align:right;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Existencias</th></tr></thead><tbody><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:5px 8px;font-family:'Courier New',monospace;font-weight:700;font-size:12px;color:#111;white-space:nowrap">P3848172B</td><td style="padding:5px 8px;color:#555;font-size:11px">Grace Plafón 3848/48 Blanco Texturado, LED 38W 3450lm, CRI90 CL.I, 270</td><td style="padding:5px 8px;text-align:right;color:#888;white-space:nowrap">121</td></tr></tbody></table></div><div style="margin-top:10px"><div style="font-size:9px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Observaciones del operario</div><textarea id="obs-task-3" placeholder="Escribe aquí cualquier incidencia o nota…" style="width:100%;min-height:48px;padding:7px 10px;border:1px solid #e0e0e0;border-radius:6px;font-size:11px;font-family:inherit;resize:vertical;color:#333;background:#fafafa;outline:none" onfocus="this.style.borderColor='#378ADD'" onblur="this.style.borderColor='#e0e0e0'" data-val=""></textarea></div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px"><span style="font-size:9px;color:#ccc">7/10/2026 07:09</span><span id="done-task-3" style="font-size:10px;color:#1D9E75;font-weight:600;display:none">✓ Completado</span></div></div><div id="card-task-4" style="background:#fff;border:1px solid #ddd;border-left:5px solid #1D9E75;border-radius:8px;padding:12px 16px;margin-bottom:12px;page-break-inside:avoid;transition:opacity .2s"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px"><div style="width:32px;height:32px;border-radius:6px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0">5</div><div style="flex:1;display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">B04311</span><span style="font-size:20px;color:#888">→</span><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">A08320</span><span style="font-size:9px;font-weight:700;padding:3px 10px;border-radius:4px;background:#1D9E75;color:#fff;letter-spacing:.5px">MOVER REFERENCIAS</span></div><label style="display:flex;align-items:center;gap:6px;cursor:pointer;flex-shrink:0"><input type="checkbox" id="chk-task-4" onchange="onCheck('task-4')" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75"><span id="chklbl-task-4" style="font-size:11px;color:#bbb;white-space:nowrap">Pendiente</span></label></div><div style="background:#E1F5EE;border-left:3px solid #1D9E75;border-radius:4px;padding:7px 12px;font-size:12px;color:#333;margin-bottom:8px">Mueve 1 referencia(s) de <code>B04311</code> a <code>A08320</code></div><div style="width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="width:100%;min-width:260px;border-collapse:collapse;font-size:11px;margin-top:8px"><thead><tr style="background:#f5f5f5;border-bottom:2px solid #e0e0e0"><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">REF</th><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Descripción</th><th style="padding:5px 8px;text-align:right;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Existencias</th></tr></thead><tbody><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:5px 8px;font-family:'Courier New',monospace;font-weight:700;font-size:12px;color:#111;white-space:nowrap">P3760472N</td><td style="padding:5px 8px;color:#555;font-size:11px">London Plafón 3760/80 Negro Texturado, LED 70W 10280lm, CRI90 CL.I, 27</td><td style="padding:5px 8px;text-align:right;color:#888;white-space:nowrap">51</td></tr></tbody></table></div><div style="margin-top:10px"><div style="font-size:9px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Observaciones del operario</div><textarea id="obs-task-4" placeholder="Escribe aquí cualquier incidencia o nota…" style="width:100%;min-height:48px;padding:7px 10px;border:1px solid #e0e0e0;border-radius:6px;font-size:11px;font-family:inherit;resize:vertical;color:#333;background:#fafafa;outline:none" onfocus="this.style.borderColor='#378ADD'" onblur="this.style.borderColor='#e0e0e0'" data-val=""></textarea></div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px"><span style="font-size:9px;color:#ccc">7/10/2026 07:10</span><span id="done-task-4" style="font-size:10px;color:#1D9E75;font-weight:600;display:none">✓ Completado</span></div></div><div id="card-task-5" style="background:#fff;border:1px solid #ddd;border-left:5px solid #1D9E75;border-radius:8px;padding:12px 16px;margin-bottom:12px;page-break-inside:avoid;transition:opacity .2s"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px"><div style="width:32px;height:32px;border-radius:6px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0">6</div><div style="flex:1;display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">B10032</span><span style="font-size:20px;color:#888">→</span><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">A06040</span><span style="font-size:9px;font-weight:700;padding:3px 10px;border-radius:4px;background:#1D9E75;color:#fff;letter-spacing:.5px">MOVER REFERENCIAS</span></div><label style="display:flex;align-items:center;gap:6px;cursor:pointer;flex-shrink:0"><input type="checkbox" id="chk-task-5" onchange="onCheck('task-5')" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75"><span id="chklbl-task-5" style="font-size:11px;color:#bbb;white-space:nowrap">Pendiente</span></label></div><div style="background:#E1F5EE;border-left:3px solid #1D9E75;border-radius:4px;padding:7px 12px;font-size:12px;color:#333;margin-bottom:8px">Mueve 1 referencia(s) de <code>B10032</code> a <code>A06040</code></div><div style="width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="width:100%;min-width:260px;border-collapse:collapse;font-size:11px;margin-top:8px"><thead><tr style="background:#f5f5f5;border-bottom:2px solid #e0e0e0"><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">REF</th><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Descripción</th><th style="padding:5px 8px;text-align:right;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Existencias</th></tr></thead><tbody><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:5px 8px;font-family:'Courier New',monospace;font-weight:700;font-size:12px;color:#111;white-space:nowrap">K0011240OP</td><td style="padding:5px 8px;color:#555;font-size:11px">Parma Tulipa Ø300mm Opal</td><td style="padding:5px 8px;text-align:right;color:#888;white-space:nowrap">248</td></tr></tbody></table></div><div style="margin-top:10px"><div style="font-size:9px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Observaciones del operario</div><textarea id="obs-task-5" placeholder="Escribe aquí cualquier incidencia o nota…" style="width:100%;min-height:48px;padding:7px 10px;border:1px solid #e0e0e0;border-radius:6px;font-size:11px;font-family:inherit;resize:vertical;color:#333;background:#fafafa;outline:none" onfocus="this.style.borderColor='#378ADD'" onblur="this.style.borderColor='#e0e0e0'" data-val=""></textarea></div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px"><span style="font-size:9px;color:#ccc">7/10/2026 07:12</span><span id="done-task-5" style="font-size:10px;color:#1D9E75;font-weight:600;display:none">✓ Completado</span></div></div><div id="card-task-6" style="background:#fff;border:1px solid #ddd;border-left:5px solid #1D9E75;border-radius:8px;padding:12px 16px;margin-bottom:12px;page-break-inside:avoid;transition:opacity .2s"><div style="display:flex;align-items:center;gap:12px;margin-bottom:10px"><div style="width:32px;height:32px;border-radius:6px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0">7</div><div style="flex:1;display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">B05221</span><span style="font-size:20px;color:#888">→</span><span style="font-family:'Courier New',monospace;font-size:20px;font-weight:800;letter-spacing:1px;color:#111">A08010</span><span style="font-size:9px;font-weight:700;padding:3px 10px;border-radius:4px;background:#1D9E75;color:#fff;letter-spacing:.5px">MOVER REFERENCIAS</span></div><label style="display:flex;align-items:center;gap:6px;cursor:pointer;flex-shrink:0"><input type="checkbox" id="chk-task-6" onchange="onCheck('task-6')" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75"><span id="chklbl-task-6" style="font-size:11px;color:#bbb;white-space:nowrap">Pendiente</span></label></div><div style="background:#E1F5EE;border-left:3px solid #1D9E75;border-radius:4px;padding:7px 12px;font-size:12px;color:#333;margin-bottom:8px">Mueve 1 referencia(s) de <code>B05221</code> a <code>A08010</code></div><div style="width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="width:100%;min-width:260px;border-collapse:collapse;font-size:11px;margin-top:8px"><thead><tr style="background:#f5f5f5;border-bottom:2px solid #e0e0e0"><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">REF</th><th style="padding:5px 8px;text-align:left;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Descripción</th><th style="padding:5px 8px;text-align:right;font-size:9px;text-transform:uppercase;color:#888;font-weight:600;letter-spacing:.5px">Existencias</th></tr></thead><tbody><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:5px 8px;font-family:'Courier New',monospace;font-weight:700;font-size:12px;color:#111;white-space:nowrap">5PANT405058BN</td><td style="padding:5px 8px;color:#555;font-size:11px">Totem Pantalla H2 Ø580x600mm Blanco/Negro</td><td style="padding:5px 8px;text-align:right;color:#888;white-space:nowrap">68</td></tr></tbody></table></div><div style="margin-top:10px"><div style="font-size:9px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Observaciones del operario</div><textarea id="obs-task-6" placeholder="Escribe aquí cualquier incidencia o nota…" style="width:100%;min-height:48px;padding:7px 10px;border:1px solid #e0e0e0;border-radius:6px;font-size:11px;font-family:inherit;resize:vertical;color:#333;background:#fafafa;outline:none" onfocus="this.style.borderColor='#378ADD'" onblur="this.style.borderColor='#e0e0e0'" data-val=""></textarea></div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px"><span style="font-size:9px;color:#ccc">7/10/2026 07:12</span><span id="done-task-6" style="font-size:10px;color:#1D9E75;font-weight:600;display:none">✓ Completado</span></div></div><div style="background:#fff;border:1px solid #ddd;border-radius:8px;padding:14px 16px;margin-bottom:20px"><div style="font-size:11px;font-weight:700;margin-bottom:6px">📝 Observaciones generales del operario</div><textarea id="obs-general" placeholder="Notas generales sobre la jornada, incidencias, etc." style="width:100%;min-height:64px;padding:8px 10px;border:1px solid #e0e0e0;border-radius:6px;font-size:12px;font-family:inherit;resize:vertical;color:#333;background:#fafafa;outline:none" onfocus="this.style.borderColor='#378ADD'" onblur="this.style.borderColor='#e0e0e0'" data-val=""></textarea><div style="margin-top:8px;display:flex;align-items:center;gap:8px"><input type="text" id="operario-nombre" placeholder="Nombre del operario" style="flex:1;padding:7px 10px;border:1px solid #e0e0e0;border-radius:6px;font-size:12px;font-family:inherit;outline:none;color:#333" onfocus="this.style.borderColor='#378ADD'" onblur="this.style.borderColor='#e0e0e0'" value=""><span style="font-size:10px;color:#bbb" id="firma-ts"></span></div></div><div style="text-align:center;font-size:9px;color:#ccc;padding:8px 0 24px">ACB Iluminación · Consulta Ubicaciones · 07/10/2026 07:12</div></div><div class="fab"><button onclick="descargarOT()" style="background:#378ADD;color:#fff">📥 Descargar</button><button onclick="window.print()" style="background:#555;color:#fff">🖨 Imprimir</button><button id="btn-devolver" onclick="devolverOT()" style="background:#1D9E75;color:#fff">📤 Devolver OT</button></div><script>const TOTAL = 7; let done = 0;function onCheck(id){const chk=document.getElementById("chk-"+id), lbl=document.getElementById("chklbl-"+id), card=document.getElementById("card-"+id), doneLbl=document.getElementById("done-"+id);if(chk.checked){ done++; lbl.textContent="✓ Hecho"; lbl.style.color="#1D9E75"; card.style.opacity=".7"; doneLbl.style.display="block"; doneLbl.textContent="✓ Completado "+new Date().toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"}); }else{ done=Math.max(0,done-1); lbl.textContent="Pendiente"; lbl.style.color="#bbb"; card.style.opacity="1"; doneLbl.style.display="none"; }updateProgress();}function updateProgress(){ const pct=TOTAL>0?Math.round(done/TOTAL*100):0; document.getElementById("progress-fill").style.width=pct+"%"; document.getElementById("progress-lbl").textContent=done+" de "+TOTAL+" tareas completadas"+(pct===100?" — ¡Todo listo! 🎉":""); }function serializarEstado(){document.querySelectorAll("textarea").forEach(ta=>{ ta.setAttribute("data-val",ta.value); ta.textContent=ta.value; });document.querySelectorAll("input[type=checkbox]").forEach(chk=>{ if(chk.checked) chk.setAttribute("checked",""); else chk.removeAttribute("checked"); });document.querySelectorAll("input[type=text]").forEach(inp=>{ inp.setAttribute("value",inp.value); });}function descargarOT(){serializarEstado();const htmlOut="<!DOCTYPE html>\n"+document.documentElement.outerHTML;const blob=new Blob([htmlOut],{type:"text/html;charset=utf-8"});const a=document.createElement("a"); a.href=URL.createObjectURL(blob);const fechaHoy=new Date().toLocaleDateString("es-ES",{day:"2-digit",month:"2-digit",year:"numeric"}).replace(/\//g,"-");a.download="OT_Movimientos_"+fechaHoy+".html"; a.click(); URL.revokeObjectURL(a.href);}function devolverOT(){const nombre=(document.getElementById("operario-nombre").value||"").trim();if(!nombre){ alert("Por favor indica el nombre del operario antes de devolver la OT."); document.getElementById("operario-nombre").focus(); return; }document.getElementById("firma-ts").textContent="Firmado: "+nombre+" · "+new Date().toLocaleString("es-ES",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"});serializarEstado();const htmlOut="<!DOCTYPE html>\n"+document.documentElement.outerHTML;const blob=new Blob([htmlOut],{type:"text/html;charset=utf-8"});const a=document.createElement("a"); a.href=URL.createObjectURL(blob);const fechaHoy=new Date().toLocaleDateString("es-ES",{day:"2-digit",month:"2-digit",year:"numeric"}).replace(/\//g,"-");a.download="OT_COMPLETADA_"+nombre.replace(/\s+/g,"_")+"_"+fechaHoy+".html"; a.click(); URL.revokeObjectURL(a.href);}</script></body></html>
+<html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OT Auditoría OT-MV937JMS</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#f0efea;padding:20px;color:#111}
+  .container{max-width:740px;margin:0 auto}
+  code{font-family:'Courier New',monospace;background:#ebebea;padding:1px 5px;border-radius:3px;font-size:13px;font-weight:700}
+  .header{background:#111;border-radius:10px;padding:18px 24px;margin-bottom:14px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+  .header h1{font-size:18px;font-weight:800;margin-bottom:4px}
+  .header-subtitle{font-size:10px;opacity:.5;letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px}
+  .header-meta{font-size:11px;opacity:.7;line-height:1.6}
+  .stats{display:flex;gap:18px;flex-wrap:wrap;text-align:center;flex-shrink:0}
+  .stat-item span:first-child{font-size:22px;font-weight:800;display:block}
+  .stat-item div{font-size:10px;color:rgba(255,255,255,.6)}
+  .progress-bar-wrap{background:#222;border-radius:20px;height:10px;margin:10px 0 4px;overflow:hidden}
+  .progress-bar{background:#1D9E75;height:10px;border-radius:20px;transition:width .3s}
+  .progress-text{font-size:11px;opacity:.7;margin-bottom:6px}
+  .task-card{background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:14px 16px;margin-bottom:14px;page-break-inside:avoid}
+  .task-header{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+  .task-number{width:32px;height:32px;border-radius:6px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0}
+  .task-title{flex:1;display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+  .task-instruction{border-radius:4px;padding:8px 12px;font-size:12px;color:#333;margin-bottom:10px;background:#F4F5F7}
+  .task-details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+  .detail-box{background:#f9f9f9;padding:10px;border-radius:6px;border:1px solid #eee}
+  .detail-label{font-size:9px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  input[type="text"],textarea{width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:4px;font-family:inherit;font-size:12px;background:#fff}
+  textarea{min-height:60px;resize:vertical}
+  .float-btns{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+  .float-btn{padding:12px 20px;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:transform .15s}
+  .float-btn:hover{transform:translateY(-2px)}
+  @media print{.float-btns{display:none}body{background:#fff;padding:8px}.header{break-inside:avoid}}
+  @page{size:A4;margin:12mm 10mm}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div style="flex:1;min-width:0">
+      <div class="header-subtitle">ACB Iluminación · Control de Stock</div>
+      <h1>Orden de Trabajo — Auditoría</h1>
+      <div class="header-meta">
+        📅 15/10/2026, 7:17:28<br>
+        👤 Auditor: <b>Pendiente</b><br>
+        🆔 OT-MV937JMS
+        
+      </div>
+      <div class="progress-bar-wrap"><div class="progress-bar" id="prog-bar" style="width:0%"></div></div>
+      <div class="progress-text" id="prog-text">0 / 15 completados (0%)</div>
+    </div>
+    <div class="stats">
+      <div class="stat-item"><span style="color:#E5484D">15</span><div>Errores</div></div>
+      <div class="stat-item"><span style="color:#F5A623">0</span><div>Bajo stock</div></div>
+      <div class="stat-item"><span style="color:#3B6E8F">15</span><div>Total</div></div>
+    </div>
+  </div>
+
+  <div style="font-size:11px;color:#888;margin-bottom:16px;padding:10px 14px;background:#fff;border-radius:6px;border:1px solid #eee">
+    Marca cada artículo al completar el conteo. Al terminar pulsa <b>Devolver OT</b> para descargar el estado completo.
+  </div>
+
+
+  <div id="card-0" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">1</div>
+      <div class="task-title">
+        <code>1BIS1004N</code>
+        <span style="font-size:12px;color:#555">→ A08372</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-0" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-0" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Move Bisel 2xØ85mm Cuadrado Negro Texturado</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>220</b>) vs. existencias (<b>218</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>218</b> uds</div>
+          <div>Sobrestock: <b>220</b></div>
+          <div>Ubicación: <b>A08372</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-0" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-0" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-0" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-1" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">2</div>
+      <div class="task-title">
+        <code>1CAM370770BB</code>
+        <span style="font-size:12px;color:#555">→ A16191</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-1" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-1" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Tiga Pantalla Ø700mm Blanco Text/Blanco Text</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>17</b>) vs. existencias (<b>13</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>13</b> uds</div>
+          <div>Sobrestock: <b>17</b></div>
+          <div>Ubicación: <b>A16191</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-1" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-1" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-1" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-2" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">3</div>
+      <div class="task-title">
+        <code>5PANT393060NA</code>
+        <span style="font-size:12px;color:#555">→ A07370</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-2" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-2" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Evens Pantalla Ø600x380mm Rafia Natural, E27</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>78</b>) vs. existencias (<b>72</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>72</b> uds</div>
+          <div>Sobrestock: <b>78</b></div>
+          <div>Ubicación: <b>A07370</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-2" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-2" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-2" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-3" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">4</div>
+      <div class="task-title">
+        <code>81CON34531B</code>
+        <span style="font-size:12px;color:#555">→ A06383</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-3" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-3" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Isia Kit Colgante 3m Blanco, CL.I</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>200</b>) vs. existencias (<b>190</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>190</b> uds</div>
+          <div>Sobrestock: <b>200</b></div>
+          <div>Ubicación: <b>A06383</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-3" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-3" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-3" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-4" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">5</div>
+      <div class="task-title">
+        <code>81CON34532NDP</code>
+        <span style="font-size:12px;color:#555">→ A06380</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-4" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-4" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Isia Kit Colgante CONJ.COL.3453 NGRO 3M DP. Negro, CL.I</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>160</b>) vs. existencias (<b>146</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>146</b> uds</div>
+          <div>Sobrestock: <b>160</b></div>
+          <div>Ubicación: <b>A06380</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-4" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-4" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-4" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-5" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">6</div>
+      <div class="task-title">
+        <code>86CON0105B</code>
+        <span style="font-size:12px;color:#555">→ A12130</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-5" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-5" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">GINA 3874 CONJUNTO 0105 TUBO PIE BLANCO TEXTURADO + CABLE BLANCO LED GU10 2x8W</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>128</b>) vs. existencias (<b>100</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>100</b> uds</div>
+          <div>Sobrestock: <b>128</b></div>
+          <div>Ubicación: <b>A12130</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-5" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-5" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-5" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-6" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">7</div>
+      <div class="task-title">
+        <code>A4008070O</code>
+        <span style="font-size:12px;color:#555">→ A05320</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-6" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-6" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Lineo Aplique 16/4008-60 Oro Técnico, LED 11W 1050lm, CRI90 CL.I IP44, 2700K-3000K Slide Switch</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>48</b>) vs. existencias (<b>23</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>23</b> uds</div>
+          <div>Sobrestock: <b>48</b></div>
+          <div>Ubicación: <b>A05320</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-6" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-6" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-6" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-7" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">8</div>
+      <div class="task-title">
+        <code>C3848272NDP</code>
+        <span style="font-size:12px;color:#555">→ A08071</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-7" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-7" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Grace Colgante 3848/58 Negro Texturado, LED 44W 3960lm, CRI90 CL.I, 2700K-3000K-4000K Slide Switch, Dim. DALI/Push, ON-DEMAND **</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>30</b>) vs. existencias (<b>26</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>26</b> uds</div>
+          <div>Sobrestock: <b>30</b></div>
+          <div>Ubicación: <b>A08071</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-7" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-7" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-7" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-8" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">9</div>
+      <div class="task-title">
+        <code>C3980000B</code>
+        <span style="font-size:12px;color:#555">→ A05181</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-8" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-8" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Invisible Módulo 3980/1196 Blanco Texturado, LED 40W 3000K 3320lm + 18W 3000K 1880lm, CRI90 CL.I</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>72</b>) vs. existencias (<b>68</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>68</b> uds</div>
+          <div>Sobrestock: <b>72</b></div>
+          <div>Ubicación: <b>A05181</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-8" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-8" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-8" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-9" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">10</div>
+      <div class="task-title">
+        <code>C3997070B</code>
+        <span style="font-size:12px;color:#555">→ A14310</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-9" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-9" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Loop Módulo Ø600mm Blanco Texturado, LED 52W 4420lm, CRI90 CL.III, 2700K-3000K Slide Switch</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>120</b>) vs. existencias (<b>100</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>100</b> uds</div>
+          <div>Sobrestock: <b>120</b></div>
+          <div>Ubicación: <b>A14310</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-9" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-9" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-9" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-10" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">11</div>
+      <div class="task-title">
+        <code>E3874080N</code>
+        <span style="font-size:12px;color:#555">→ A01260</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-10" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-10" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Gina Empotrable 3874 Negro Texturado, LED GU10 8W, CL.II, Orientable</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>1200</b>) vs. existencias (<b>1182</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>1182</b> uds</div>
+          <div>Sobrestock: <b>1200</b></div>
+          <div>Ubicación: <b>A01260</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-10" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-10" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-10" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-11" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">12</div>
+      <div class="task-title">
+        <code>K0008240FU</code>
+        <span style="font-size:12px;color:#555">→ A03161</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-11" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-11" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Pipe SLIM Tulipa Ø200mm Fumé</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>168</b>) vs. existencias (<b>132</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>132</b> uds</div>
+          <div>Sobrestock: <b>168</b></div>
+          <div>Ubicación: <b>A03161</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-11" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-11" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-11" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-12" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">13</div>
+      <div class="task-title">
+        <code>P3742274NDP</code>
+        <span style="font-size:12px;color:#555">→ A12220</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-12" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-12" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Aliso Plafón 3742/80 Negro Texturado, LED 75W 7507lm, CRI90 CL.I, 2700K-3000K-4000K Slide Switch, Dim. DALI/Push, ON-DEMAND **</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>0</b>) vs. existencias (<b>-2</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>-2</b> uds</div>
+          <div>Sobrestock: <b>0</b></div>
+          <div>Ubicación: <b>A12220</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-12" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-12" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-12" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-13" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">14</div>
+      <div class="task-title">
+        <code>P3761272B</code>
+        <span style="font-size:12px;color:#555">→ A06100</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-13" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-13" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Turin Plafón 3761/90 Blanco Texturado, LED 39W 5900lm, CRI90 CL.I, 2700K-3000K-4000K Slide Switch</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>220</b>) vs. existencias (<b>200</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>200</b> uds</div>
+          <div>Sobrestock: <b>220</b></div>
+          <div>Ubicación: <b>A06100</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-13" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-13" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-13" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+  <div id="card-14" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
+    <div class="task-header">
+      <div class="task-number" style="background:#E5484D">15</div>
+      <div class="task-title">
+        <code>P3974070B</code>
+        <span style="font-size:12px;color:#555">→ A14101</span>
+        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
+        <input type="checkbox" id="chk-14" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
+        <span id="lbl-14" style="font-size:11px;color:#bbb">Pendiente</span>
+      </label>
+    </div>
+    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Roma Plafón 3974/40 Blanco Texturado, LED 35W 2800lm + 5W 500lm, CRI90 CL.I, 2700K-3000K Slide Switch, Difusor Microprismático</div>
+    <div class="task-instruction" style="border-left:3px solid #E5484D">
+      Verificar discrepancia: sobrestock (<b>66</b>) vs. existencias (<b>54</b>). Contar físicamente y corregir.
+    </div>
+    <div class="task-details">
+      <div class="detail-box">
+        <div class="detail-label">Datos sistema</div>
+        <div style="font-size:12px;line-height:1.8">
+          <div>Existencias: <b>54</b> uds</div>
+          <div>Sobrestock: <b>66</b></div>
+          <div>Ubicación: <b>A14101</b></div>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="detail-label">Conteo real</div>
+        <div>
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
+          <input type="text" id="qty-14" placeholder="(completar)" style="margin-bottom:8px">
+          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
+          <input type="text" id="loc-14" placeholder="(completar o —)">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px">
+      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
+      <textarea id="obs-14" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;padding:20px;border-top:2px solid #ddd;background:#fff;border-radius:8px">
+    <p style="margin:8px 0;font-size:12px"><b>Operario:</b> ___________________ &nbsp;&nbsp; <b>Firma:</b> ___________________</p>
+    <p style="margin:8px 0;font-size:12px"><b>Fecha:</b> ___________________</p>
+  </div>
+
+</div>
+
+<div class="float-btns">
+  <button class="float-btn" onclick="window.print()" style="background:#E3E6EA;color:#1C2128">🖨 Imprimir</button>
+  <button class="float-btn" onclick="descargarOT()" style="background:#1C2128;color:#fff">⬇️ Descargar OT</button>
+  <button class="float-btn" onclick="devolverOT()" style="background:#1D9E75;color:#fff">📤 Devolver OT</button>
+</div>
+
+<script>
+
+  var _total = 15;
+  function actualizarProgreso() {
+    var done = 0;
+    for(var i=0;i<_total;i++){
+      var chk = document.getElementById('chk-'+i);
+      var lbl = document.getElementById('lbl-'+i);
+      if(chk && chk.checked){ done++; if(lbl) lbl.textContent='✓ Completado'; lbl.style.color='#4CAF7D'; }
+      else { if(lbl){ lbl.textContent='Pendiente'; lbl.style.color='#bbb'; } }
+    }
+    var pct = Math.round(done/_total*100);
+    document.getElementById('prog-bar').style.width = pct+'%';
+    document.getElementById('prog-text').textContent = done+' / '+_total+' completados ('+pct+'%)';
+  }
+  function devolverOT() {
+    var nombre = prompt('Introduce tu nombre (operario):');
+    if(!nombre) return;
+    // Serializar estado actual al DOM antes de capturar
+    var tareas = [];
+    for(var i=0;i<_total;i++){
+      var chk=document.getElementById('chk-'+i);
+      var qty=document.getElementById('qty-'+i);
+      var loc=document.getElementById('loc-'+i);
+      var obs=document.getElementById('obs-'+i);
+      tareas.push({ completado: chk&&chk.checked, qty: qty&&qty.value, loc: loc&&loc.value, obs: obs&&obs.value });
+    }
+    // Restaurar valores en DOM para que la captura incluya el estado
+    for(var i=0;i<_total;i++){
+      var chk=document.getElementById('chk-'+i);
+      var qty=document.getElementById('qty-'+i);
+      var loc=document.getElementById('loc-'+i);
+      var obs=document.getElementById('obs-'+i);
+      if(chk){ if(tareas[i].completado){ chk.setAttribute('checked','checked'); } else { chk.removeAttribute('checked'); } }
+      if(qty) qty.setAttribute('value', tareas[i].qty||'');
+      if(loc) loc.setAttribute('value', tareas[i].loc||'');
+      if(obs) obs.textContent = tareas[i].obs||'';
+    }
+    var snap = '<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var ts = new Date().toLocaleDateString('es-ES').replace(/\//g,'-');
+    var blob = new Blob([snap], {type:'text/html;charset=utf-8'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'OT_COMPLETADA_'+nombre.replace(/\s+/g,'_')+'_'+ts+'.html';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); }, 1000);
+  }
+  function descargarOT() {
+    var snap = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    var ts = new Date().toLocaleDateString('es-ES').replace(/\//g, '-');
+    var id = document.title.replace(/[^A-Z0-9-]/g, '') || 'OT';
+    var blob = new Blob([snap], { type: 'text/html;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = id + '_' + ts + '.html';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function() { URL.revokeObjectURL(url); a.remove(); }, 1000);
+  }
+  window.addEventListener('DOMContentLoaded', actualizarProgreso);
+  
+</script>
+
+</body></html>
