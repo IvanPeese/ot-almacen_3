@@ -1,597 +1,235 @@
 <!DOCTYPE html>
-<html lang="es"><head>
-<meta charset="UTF-8">
+<html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OT Auditoría OT-MVOVM1X5</title>
+<title>Verificación de ubicaciones</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#f0efea;padding:20px;color:#111}
-  .container{max-width:740px;margin:0 auto}
-  code{font-family:'Courier New',monospace;background:#ebebea;padding:1px 5px;border-radius:3px;font-size:13px;font-weight:700}
-  .header{background:#111;border-radius:10px;padding:18px 24px;margin-bottom:14px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
-  .header h1{font-size:18px;font-weight:800;margin-bottom:4px}
-  .header-subtitle{font-size:10px;opacity:.5;letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px}
-  .header-meta{font-size:11px;opacity:.7;line-height:1.6}
-  .stats{display:flex;gap:18px;flex-wrap:wrap;text-align:center;flex-shrink:0}
-  .stat-item span:first-child{font-size:22px;font-weight:800;display:block}
-  .stat-item div{font-size:10px;color:rgba(255,255,255,.6)}
-  .progress-bar-wrap{background:#222;border-radius:20px;height:10px;margin:10px 0 4px;overflow:hidden}
-  .progress-bar{background:#1D9E75;height:10px;border-radius:20px;transition:width .3s}
-  .progress-text{font-size:11px;opacity:.7;margin-bottom:6px}
-  .task-card{background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:14px 16px;margin-bottom:14px;page-break-inside:avoid}
-  .task-header{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
-  .task-number{width:32px;height:32px;border-radius:6px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0}
-  .task-title{flex:1;display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
-  .task-instruction{border-radius:4px;padding:8px 12px;font-size:12px;color:#333;margin-bottom:10px;background:#F4F5F7}
-  .task-details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
-  .detail-box{background:#f9f9f9;padding:10px;border-radius:6px;border:1px solid #eee}
-  .detail-label{font-size:9px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
-  input[type="text"],textarea{width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:4px;font-family:inherit;font-size:12px;background:#fff}
-  textarea{min-height:60px;resize:vertical}
-  .float-btns{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
-  .float-btn{padding:12px 20px;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:transform .15s}
-  .float-btn:hover{transform:translateY(-2px)}
-  @media print{.float-btns{display:none}body{background:#fff;padding:8px}.header{break-inside:avoid}}
-  @page{size:A4;margin:12mm 10mm}
-</style>
-</head>
-<body>
-<div class="container">
-
-  <div class="header">
-    <div style="flex:1;min-width:0">
-      <div class="header-subtitle">ACB Iluminación · Control de Stock</div>
-      <h1>Orden de Trabajo — Auditoría</h1>
-      <div class="header-meta">
-        📅 26/10/2026, 7:29:07<br>
-        👤 Auditor: <b>Pendiente</b><br>
-        🆔 OT-MVOVM1X5
-        
-      </div>
-      <div class="progress-bar-wrap"><div class="progress-bar" id="prog-bar" style="width:0%"></div></div>
-      <div class="progress-text" id="prog-text">0 / 11 completados (0%)</div>
-    </div>
-    <div class="stats">
-      <div class="stat-item"><span style="color:#E5484D">11</span><div>Errores</div></div>
-      <div class="stat-item"><span style="color:#F5A623">0</span><div>Bajo stock</div></div>
-      <div class="stat-item"><span style="color:#3B6E8F">11</span><div>Total</div></div>
-    </div>
-  </div>
-
-  <div style="font-size:11px;color:#888;margin-bottom:16px;padding:10px 14px;background:#fff;border-radius:6px;border:1px solid #eee">
-    Marca cada artículo al completar el conteo. Al terminar pulsa <b>Devolver OT</b> para descargar el estado completo.
-  </div>
-
-
-  <div id="card-0" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
-    <div class="task-header">
-      <div class="task-number" style="background:#E5484D">1</div>
-      <div class="task-title">
-        <code>5PANT393140NA</code>
-        <span style="font-size:12px;color:#555">→ A06180</span>
-        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
-      </div>
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
-        <input type="checkbox" id="chk-0" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
-        <span id="lbl-0" style="font-size:11px;color:#bbb">Pendiente</span>
-      </label>
-    </div>
-    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Vivian Pantalla Ø400x340mm Rafia Natural, E27</div>
-    <div class="task-instruction" style="border-left:3px solid #E5484D">
-      Verificar discrepancia: sobrestock (<b>220</b>) vs. existencias (<b>204</b>). Contar físicamente y corregir.
-    </div>
-    <div class="task-details">
-      <div class="detail-box">
-        <div class="detail-label">Datos sistema</div>
-        <div style="font-size:12px;line-height:1.8">
-          <div>Existencias: <b>204</b> uds</div>
-          <div>Sobrestock: <b>220</b></div>
-          <div>Ubicación: <b>A06180</b></div>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="detail-label">Conteo real</div>
-        <div>
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
-          <input type="text" id="qty-0" placeholder="(completar)" style="margin-bottom:8px">
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
-          <input type="text" id="loc-0" placeholder="(completar o —)">
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
-      <textarea id="obs-0" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
-    </div>
-  </div>
-  <div id="card-1" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
-    <div class="task-header">
-      <div class="task-number" style="background:#E5484D">2</div>
-      <div class="task-title">
-        <code>5PANT400061WAL</code>
-        <span style="font-size:12px;color:#555">→ A15101</span>
-        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
-      </div>
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
-        <input type="checkbox" id="chk-1" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
-        <span id="lbl-1" style="font-size:11px;color:#bbb">Pendiente</span>
-      </label>
-    </div>
-    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Aura Pantalla Ø610x500mm Nogal</div>
-    <div class="task-instruction" style="border-left:3px solid #E5484D">
-      Verificar discrepancia: sobrestock (<b>7</b>) vs. existencias (<b>5</b>). Contar físicamente y corregir.
-    </div>
-    <div class="task-details">
-      <div class="detail-box">
-        <div class="detail-label">Datos sistema</div>
-        <div style="font-size:12px;line-height:1.8">
-          <div>Existencias: <b>5</b> uds</div>
-          <div>Sobrestock: <b>7</b></div>
-          <div>Ubicación: <b>A15101</b></div>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="detail-label">Conteo real</div>
-        <div>
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
-          <input type="text" id="qty-1" placeholder="(completar)" style="margin-bottom:8px">
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
-          <input type="text" id="loc-1" placeholder="(completar o —)">
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
-      <textarea id="obs-1" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
-    </div>
-  </div>
-  <div id="card-2" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
-    <div class="task-header">
-      <div class="task-number" style="background:#E5484D">3</div>
-      <div class="task-title">
-        <code>81FLO224T3CTBDP</code>
-        <span style="font-size:12px;color:#555">→ A04200</span>
-        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
-      </div>
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
-        <input type="checkbox" id="chk-2" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
-        <span id="lbl-2" style="font-size:11px;color:#bbb">Pendiente</span>
-      </label>
-    </div>
-    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Isia Kit Colgante 3m Blanco Texturado, CL.I, Dim. DALI/Push</div>
-    <div class="task-instruction" style="border-left:3px solid #E5484D">
-      Verificar discrepancia: sobrestock (<b>80</b>) vs. existencias (<b>27</b>). Contar físicamente y corregir.
-    </div>
-    <div class="task-details">
-      <div class="detail-box">
-        <div class="detail-label">Datos sistema</div>
-        <div style="font-size:12px;line-height:1.8">
-          <div>Existencias: <b>27</b> uds</div>
-          <div>Sobrestock: <b>80</b></div>
-          <div>Ubicación: <b>A04200</b></div>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="detail-label">Conteo real</div>
-        <div>
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
-          <input type="text" id="qty-2" placeholder="(completar)" style="margin-bottom:8px">
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
-          <input type="text" id="loc-2" placeholder="(completar o —)">
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
-      <textarea id="obs-2" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
-    </div>
-  </div>
-  <div id="card-3" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
-    <div class="task-header">
-      <div class="task-number" style="background:#E5484D">4</div>
-      <div class="task-title">
-        <code>A3568002B</code>
-        <span style="font-size:12px;color:#555">→ A01200</span>
-        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
-      </div>
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
-        <input type="checkbox" id="chk-3" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
-        <span id="lbl-3" style="font-size:11px;color:#bbb">Pendiente</span>
-      </label>
-    </div>
-    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Manat Aplique 16/3568 Blanco Texturado, LED 5W 3000K 415lm + 3W 3000K 285lm, CRI90 CL.I, Dos interruptores, Con USB, USB-C, Orientable</div>
-    <div class="task-instruction" style="border-left:3px solid #E5484D">
-      Verificar discrepancia: sobrestock (<b>900</b>) vs. existencias (<b>894</b>). Contar físicamente y corregir.
-    </div>
-    <div class="task-details">
-      <div class="detail-box">
-        <div class="detail-label">Datos sistema</div>
-        <div style="font-size:12px;line-height:1.8">
-          <div>Existencias: <b>894</b> uds</div>
-          <div>Sobrestock: <b>900</b></div>
-          <div>Ubicación: <b>A01200</b></div>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="detail-label">Conteo real</div>
-        <div>
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
-          <input type="text" id="qty-3" placeholder="(completar)" style="margin-bottom:8px">
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
-          <input type="text" id="loc-3" placeholder="(completar o —)">
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
-      <textarea id="obs-3" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
-    </div>
-  </div>
-  <div id="card-4" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
-    <div class="task-header">
-      <div class="task-number" style="background:#E5484D">5</div>
-      <div class="task-title">
-        <code>A3833271B</code>
-        <span style="font-size:12px;color:#555">→ A04131</span>
-        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
-      </div>
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
-        <input type="checkbox" id="chk-4" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
-        <span id="lbl-4" style="font-size:11px;color:#bbb">Pendiente</span>
-      </label>
-    </div>
-    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Fosca Aplique 16/3833-90 Blanco Texturado, LED 30W 2600lm, CRI90 CL.I, 2700K-3000K-4000K Slide Switch</div>
-    <div class="task-instruction" style="border-left:3px solid #E5484D">
-      Verificar discrepancia: sobrestock (<b>120</b>) vs. existencias (<b>115</b>). Contar físicamente y corregir.
-    </div>
-    <div class="task-details">
-      <div class="detail-box">
-        <div class="detail-label">Datos sistema</div>
-        <div style="font-size:12px;line-height:1.8">
-          <div>Existencias: <b>115</b> uds</div>
-          <div>Sobrestock: <b>120</b></div>
-          <div>Ubicación: <b>A04131</b></div>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="detail-label">Conteo real</div>
-        <div>
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
-          <input type="text" id="qty-4" placeholder="(completar)" style="margin-bottom:8px">
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
-          <input type="text" id="loc-4" placeholder="(completar o —)">
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
-      <textarea id="obs-4" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
-    </div>
-  </div>
-  <div id="card-5" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
-    <div class="task-header">
-      <div class="task-number" style="background:#E5484D">6</div>
-      <div class="task-title">
-        <code>A4005170OM</code>
-        <span style="font-size:12px;color:#555">→ A05240</span>
-        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
-      </div>
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
-        <input type="checkbox" id="chk-5" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
-        <span id="lbl-5" style="font-size:11px;color:#bbb">Pendiente</span>
-      </label>
-    </div>
-    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Divino Aplique 16/4005-60 Oro Viejo Mate, LED 32W 1135lm, CRI90 CL.II IP44, 2200K-2700K-3000K Slide Switch</div>
-    <div class="task-instruction" style="border-left:3px solid #E5484D">
-      Verificar discrepancia: sobrestock (<b>40</b>) vs. existencias (<b>32</b>). Contar físicamente y corregir.
-    </div>
-    <div class="task-details">
-      <div class="detail-box">
-        <div class="detail-label">Datos sistema</div>
-        <div style="font-size:12px;line-height:1.8">
-          <div>Existencias: <b>32</b> uds</div>
-          <div>Sobrestock: <b>40</b></div>
-          <div>Ubicación: <b>A05240</b></div>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="detail-label">Conteo real</div>
-        <div>
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
-          <input type="text" id="qty-5" placeholder="(completar)" style="margin-bottom:8px">
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
-          <input type="text" id="loc-5" placeholder="(completar o —)">
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
-      <textarea id="obs-5" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
-    </div>
-  </div>
-  <div id="card-6" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
-    <div class="task-header">
-      <div class="task-number" style="background:#E5484D">7</div>
-      <div class="task-title">
-        <code>E3771292NSD</code>
-        <span style="font-size:12px;color:#555">→ A06383</span>
-        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
-      </div>
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
-        <input type="checkbox" id="chk-6" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
-        <span id="lbl-6" style="font-size:11px;color:#bbb">Pendiente</span>
-      </label>
-    </div>
-    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Kidal Empotrable Ø60mm Negro Texturado, LED COB 5W 2700K 560lm, CRI90 CL.II IP44/IP20, Sin Driver</div>
-    <div class="task-instruction" style="border-left:3px solid #E5484D">
-      Verificar discrepancia: sobrestock (<b>200</b>) vs. existencias (<b>132</b>). Contar físicamente y corregir.
-    </div>
-    <div class="task-details">
-      <div class="detail-box">
-        <div class="detail-label">Datos sistema</div>
-        <div style="font-size:12px;line-height:1.8">
-          <div>Existencias: <b>132</b> uds</div>
-          <div>Sobrestock: <b>200</b></div>
-          <div>Ubicación: <b>A06383</b></div>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="detail-label">Conteo real</div>
-        <div>
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
-          <input type="text" id="qty-6" placeholder="(completar)" style="margin-bottom:8px">
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
-          <input type="text" id="loc-6" placeholder="(completar o —)">
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
-      <textarea id="obs-6" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
-    </div>
-  </div>
-  <div id="card-7" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
-    <div class="task-header">
-      <div class="task-number" style="background:#E5484D">8</div>
-      <div class="task-title">
-        <code>E3987270NSD</code>
-        <span style="font-size:12px;color:#555">→ A05140</span>
-        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
-      </div>
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
-        <input type="checkbox" id="chk-7" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
-        <span id="lbl-7" style="font-size:11px;color:#bbb">Pendiente</span>
-      </label>
-    </div>
-    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Tech Empotrable Ø210mm Negro Texturado, LED 32.5W 3880lm, CRI90 CL.II IP65/IP20, 3000K-3500K-4000K Slide Switch, Difusor Microprismático, Sin Driver</div>
-    <div class="task-instruction" style="border-left:3px solid #E5484D">
-      Verificar discrepancia: sobrestock (<b>120</b>) vs. existencias (<b>81</b>). Contar físicamente y corregir.
-    </div>
-    <div class="task-details">
-      <div class="detail-box">
-        <div class="detail-label">Datos sistema</div>
-        <div style="font-size:12px;line-height:1.8">
-          <div>Existencias: <b>81</b> uds</div>
-          <div>Sobrestock: <b>120</b></div>
-          <div>Ubicación: <b>A05140</b></div>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="detail-label">Conteo real</div>
-        <div>
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
-          <input type="text" id="qty-7" placeholder="(completar)" style="margin-bottom:8px">
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
-          <input type="text" id="loc-7" placeholder="(completar o —)">
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
-      <textarea id="obs-7" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
-    </div>
-  </div>
-  <div id="card-8" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
-    <div class="task-header">
-      <div class="task-number" style="background:#E5484D">9</div>
-      <div class="task-title">
-        <code>K0011140OP</code>
-        <span style="font-size:12px;color:#555">→ A06130</span>
-        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
-      </div>
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
-        <input type="checkbox" id="chk-8" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
-        <span id="lbl-8" style="font-size:11px;color:#bbb">Pendiente</span>
-      </label>
-    </div>
-    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Parma Tulipa Ø180mm Opal</div>
-    <div class="task-instruction" style="border-left:3px solid #E5484D">
-      Verificar discrepancia: sobrestock (<b>684</b>) vs. existencias (<b>628</b>). Contar físicamente y corregir.
-    </div>
-    <div class="task-details">
-      <div class="detail-box">
-        <div class="detail-label">Datos sistema</div>
-        <div style="font-size:12px;line-height:1.8">
-          <div>Existencias: <b>628</b> uds</div>
-          <div>Sobrestock: <b>684</b></div>
-          <div>Ubicación: <b>A06130</b></div>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="detail-label">Conteo real</div>
-        <div>
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
-          <input type="text" id="qty-8" placeholder="(completar)" style="margin-bottom:8px">
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
-          <input type="text" id="loc-8" placeholder="(completar o —)">
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
-      <textarea id="obs-8" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
-    </div>
-  </div>
-  <div id="card-9" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
-    <div class="task-header">
-      <div class="task-number" style="background:#E5484D">10</div>
-      <div class="task-title">
-        <code>P3760472N</code>
-        <span style="font-size:12px;color:#555">→ A08320</span>
-        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
-      </div>
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
-        <input type="checkbox" id="chk-9" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
-        <span id="lbl-9" style="font-size:11px;color:#bbb">Pendiente</span>
-      </label>
-    </div>
-    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">London Plafón 3760/80 Negro Texturado, LED 70W 10280lm, CRI90 CL.I, 2700K-3000K-4000K Slide Switch</div>
-    <div class="task-instruction" style="border-left:3px solid #E5484D">
-      Verificar discrepancia: sobrestock (<b>25</b>) vs. existencias (<b>22</b>). Contar físicamente y corregir.
-    </div>
-    <div class="task-details">
-      <div class="detail-box">
-        <div class="detail-label">Datos sistema</div>
-        <div style="font-size:12px;line-height:1.8">
-          <div>Existencias: <b>22</b> uds</div>
-          <div>Sobrestock: <b>25</b></div>
-          <div>Ubicación: <b>A08320</b></div>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="detail-label">Conteo real</div>
-        <div>
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
-          <input type="text" id="qty-9" placeholder="(completar)" style="margin-bottom:8px">
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
-          <input type="text" id="loc-9" placeholder="(completar o —)">
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
-      <textarea id="obs-9" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
-    </div>
-  </div>
-  <div id="card-10" class="task-card" style="border-left:5px solid #E5484D;background:#fdf2f2">
-    <div class="task-header">
-      <div class="task-number" style="background:#E5484D">11</div>
-      <div class="task-title">
-        <code>P3848172B</code>
-        <span style="font-size:12px;color:#555">→ A06050</span>
-        <span style="font-size:11px;font-weight:700;color:#E5484D;background:#fdf2f2;border:1px solid #E5484D;border-radius:4px;padding:2px 7px">🚨 ERROR</span>
-      </div>
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap">
-        <input type="checkbox" id="chk-10" onchange="actualizarProgreso()" style="width:20px;height:20px;cursor:pointer;accent-color:#1D9E75">
-        <span id="lbl-10" style="font-size:11px;color:#bbb">Pendiente</span>
-      </label>
-    </div>
-    <div style="font-size:12px;color:#444;margin-bottom:8px;font-style:italic">Grace Plafón 3848/48 Blanco Texturado, LED 38W 3450lm, CRI90 CL.I, 2700K-3000K-4000K Slide Switch</div>
-    <div class="task-instruction" style="border-left:3px solid #E5484D">
-      Verificar discrepancia: sobrestock (<b>100</b>) vs. existencias (<b>93</b>). Contar físicamente y corregir.
-    </div>
-    <div class="task-details">
-      <div class="detail-box">
-        <div class="detail-label">Datos sistema</div>
-        <div style="font-size:12px;line-height:1.8">
-          <div>Existencias: <b>93</b> uds</div>
-          <div>Sobrestock: <b>100</b></div>
-          <div>Ubicación: <b>A06050</b></div>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="detail-label">Conteo real</div>
-        <div>
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Cantidad contada:</label>
-          <input type="text" id="qty-10" placeholder="(completar)" style="margin-bottom:8px">
-          <label style="font-size:10px;font-weight:700;color:#666;display:block;margin-bottom:3px">Ubicación confirmada:</label>
-          <input type="text" id="loc-10" placeholder="(completar o —)">
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block">Observaciones</label>
-      <textarea id="obs-10" placeholder="Incidencias, discrepancias, notas..." style="font-size:12px"></textarea>
-    </div>
-  </div>
-
-  <div style="margin-top:40px;padding:20px;border-top:2px solid #ddd;background:#fff;border-radius:8px">
-    <p style="margin:8px 0;font-size:12px"><b>Operario:</b> ___________________ &nbsp;&nbsp; <b>Firma:</b> ___________________</p>
-    <p style="margin:8px 0;font-size:12px"><b>Fecha:</b> ___________________</p>
-  </div>
-
-</div>
-
-<div class="float-btns">
-  <button class="float-btn" onclick="window.print()" style="background:#E3E6EA;color:#1C2128">🖨 Imprimir</button>
-  <button class="float-btn" onclick="descargarOT()" style="background:#1C2128;color:#fff">⬇️ Descargar OT</button>
-  <button class="float-btn" onclick="devolverOT()" style="background:#1D9E75;color:#fff">📤 Devolver OT</button>
-</div>
-
+:root{--bg:#f4f5f7;--card:#fff;--ink:#1c2430;--mut:#6b7686;--ac:#0b5cab;--ok:#1b8a4b;--okbg:#e4f5ea;--wa:#b26a00;--wabg:#fff3dc;--er:#c0392b;--erbg:#fde8e6;--bd:#d9dee5}
+*{box-sizing:border-box}body{margin:0;font:15px/1.4 system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+#top{position:sticky;top:0;z-index:20}
+header{background:#12263f;color:#fff;padding:6px 12px 7px}
+header h1{margin:0;font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header .sub{font-size:12px;opacity:.9;display:flex;align-items:center;gap:8px;margin-top:2px}
+.bar{height:6px;background:#ffffff33;border-radius:3px;margin-top:5px;overflow:hidden}.bar i{display:block;height:100%;background:#4cd48a;width:0}
+nav{display:flex;background:#fff;border-bottom:1px solid var(--bd)}nav button{flex:1;min-width:0;border:0;background:none;padding:10px 1px;font-size:12.5px;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+nav button.on{border-color:var(--ac);color:var(--ac);font-weight:600}
+#msg{padding:6px 12px;font-size:14px}#msg:empty{display:none}.m-ok{background:var(--okbg);color:var(--ok)}.m-er{background:var(--erbg);color:var(--er)}
+main{padding:10px 10px 90px;max-width:900px;margin:auto}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;margin-bottom:10px;overflow:hidden}.card.cur{border:2px solid var(--ac)}.card.done{background:#f7fbf8;border-color:var(--ok)}
+.cb{padding:10px 12px}.desc{color:var(--mut);font-size:13px}
+button.b{border:0;border-radius:8px;padding:9px 13px;min-height:44px;font-size:15px;cursor:pointer;background:var(--ac);color:#fff}
+button.b.g{background:#e8edf3;color:var(--ink)}button.b.ok{background:var(--ok)}button.b.er{background:var(--er)}button.b.wa{background:var(--wa)}button.b.sm{padding:6px 9px;min-height:34px;font-size:13px}button.b:disabled{opacity:.45}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.sel{display:flex;gap:6px;margin-bottom:8px}.sel select{flex:1;min-width:0;font-size:16px;padding:9px 6px;border:2px solid var(--ac);border-radius:8px;background:#fff}
+.pb{height:8px;background:#e3e8ee;border-radius:4px;overflow:hidden;margin:6px 0}.pb i{display:block;height:100%;background:var(--ok)}
+.tag{font-size:11px;padding:2px 7px;border-radius:10px;background:#e8edf3;color:var(--mut);margin-left:4px;white-space:nowrap}.tag.p{background:#e1ecfa;color:var(--ac)}.tag.s{background:var(--wabg);color:var(--wa)}
+.ln{padding:9px 10px;margin:8px 0;border-radius:10px;background:#f4f6f9;border:2px solid transparent}
+.ln.ok{background:var(--okbg);border-color:var(--ok)}.ln.no{background:var(--erbg);border-color:var(--er)}.ln.ex{background:var(--wabg);border-color:var(--wa)}
+.ln .code{font-weight:700;font-size:17px}.ln .ds{font-size:13px;color:var(--mut)}
+.ln .bt{display:flex;gap:8px;margin-top:8px}.ln .bt button{flex:1;font-size:16px}
+.warn{background:var(--wabg);color:var(--wa);padding:6px 10px;border-radius:6px;font-size:13px;margin:6px 0}.err{background:var(--erbg);color:var(--er);padding:6px 10px;border-radius:6px;font-size:13px;margin:6px 0}
+table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:5px 6px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}
+input.fq,textarea.fq,input.fi{width:100%;font-size:16px;padding:9px 10px;border:2px solid var(--bd);border-radius:8px;margin-bottom:8px;font-family:inherit}input.fq{border-color:var(--ac)}
+#foot{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--bd);padding:6px 8px;display:flex;gap:6px;z-index:15}#foot button{flex:1;padding:8px 4px;font-size:14px}
+.lrow{display:flex;align-items:center;gap:8px;padding:9px 10px;border-bottom:1px solid var(--bd);cursor:pointer}.lrow:last-child{border:0}.lrow b{font-size:16px}.lrow .st{margin-left:auto;font-size:12px;white-space:nowrap}
+.lrow.done{background:var(--okbg)}.lrow.prog{background:var(--wabg)}.lrow.dis{background:var(--erbg)}
+.kp{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}.kp div{flex:1;min-width:86px;background:#f4f6f9;border-radius:8px;padding:6px 8px;text-align:center}.kp b{display:block;font-size:20px}.kp span{font-size:11px;color:var(--mut)}
+#modal{display:none;position:fixed;inset:0;background:#000a;z-index:50;overflow:auto}#modal .box{background:#fff;max-width:520px;margin:8px auto;border-radius:12px;padding:14px}
+.sug{border:1px solid var(--bd);border-radius:8px;margin:-4px 0 8px;max-height:170px;overflow:auto}.sug div{padding:7px 10px;border-bottom:1px solid var(--bd);cursor:pointer;font-size:14px}.sug div:last-child{border:0}
+label.ck{display:flex;gap:8px;align-items:center;padding:6px 0}label.ck input{width:20px;height:20px}
+</style></head><body>
+<div id="top"><header><h1>Verificación de ubicaciones <span id="fecha" style="font-weight:400;opacity:.8"></span></h1>
+<div class="sub"><span id="hprog"></span><input id="oper" placeholder="Operario" style="flex:1;min-width:0;max-width:120px;font-size:12px;padding:2px 6px;border-radius:5px;border:0"></div>
+<div class="bar"><i id="hbar"></i></div></header>
+<nav id="nav"><button data-t="rev" class="on">Revisar</button><button data-t="lista">Lista</button><button data-t="res">Resumen</button></nav></div>
+<div id="msg"></div>
+<main id="app"></main>
+<div id="foot" style="display:none"></div>
+<div id="modal"><div class="box" id="mbox"></div></div>
+<script type="application/json" id="ver-datos">null</script>
+<script type="application/json" id="ver-estado">null</script>
 <script>
-
-  var _total = 11;
-  function actualizarProgreso() {
-    var done = 0;
-    for(var i=0;i<_total;i++){
-      var chk = document.getElementById('chk-'+i);
-      var lbl = document.getElementById('lbl-'+i);
-      if(chk && chk.checked){ done++; if(lbl) lbl.textContent='✓ Completado'; lbl.style.color='#4CAF7D'; }
-      else { if(lbl){ lbl.textContent='Pendiente'; lbl.style.color='#bbb'; } }
-    }
-    var pct = Math.round(done/_total*100);
-    document.getElementById('prog-bar').style.width = pct+'%';
-    document.getElementById('prog-text').textContent = done+' / '+_total+' completados ('+pct+'%)';
-  }
-  function devolverOT() {
-    var nombre = prompt('Introduce tu nombre (operario):');
-    if(!nombre) return;
-    // Serializar estado actual al DOM antes de capturar
-    var tareas = [];
-    for(var i=0;i<_total;i++){
-      var chk=document.getElementById('chk-'+i);
-      var qty=document.getElementById('qty-'+i);
-      var loc=document.getElementById('loc-'+i);
-      var obs=document.getElementById('obs-'+i);
-      tareas.push({ completado: chk&&chk.checked, qty: qty&&qty.value, loc: loc&&loc.value, obs: obs&&obs.value });
-    }
-    // Restaurar valores en DOM para que la captura incluya el estado
-    for(var i=0;i<_total;i++){
-      var chk=document.getElementById('chk-'+i);
-      var qty=document.getElementById('qty-'+i);
-      var loc=document.getElementById('loc-'+i);
-      var obs=document.getElementById('obs-'+i);
-      if(chk){ if(tareas[i].completado){ chk.setAttribute('checked','checked'); } else { chk.removeAttribute('checked'); } }
-      if(qty) qty.setAttribute('value', tareas[i].qty||'');
-      if(loc) loc.setAttribute('value', tareas[i].loc||'');
-      if(obs) obs.textContent = tareas[i].obs||'';
-    }
-    var snap = '<!DOCTYPE html>\n'+document.documentElement.outerHTML;
-    var ts = new Date().toLocaleDateString('es-ES').replace(/\//g,'-');
-    var blob = new Blob([snap], {type:'text/html;charset=utf-8'});
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = 'OT_COMPLETADA_'+nombre.replace(/\s+/g,'_')+'_'+ts+'.html';
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); }, 1000);
-  }
-  function descargarOT() {
-    var snap = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-    var ts = new Date().toLocaleDateString('es-ES').replace(/\//g, '-');
-    var id = document.title.replace(/[^A-Z0-9-]/g, '') || 'OT';
-    var blob = new Blob([snap], { type: 'text/html;charset=utf-8' });
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = id + '_' + ts + '.html';
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(function() { URL.revokeObjectURL(url); a.remove(); }, 1000);
-  }
-  window.addEventListener('DOMContentLoaded', actualizarProgreso);
-  
-</script>
-
-</body></html>
+const S1CODES=["1U011", "1U012", "1U013", "1U021", "1U022", "1U023", "1U031", "1U032", "1U033", "1U041", "1U042", "1U043", "1T011", "1T012", "1T013", "1T021", "1T022", "1T023", "1T031", "1T032", "1T033", "1T041", "1T042", "1T043", "1T051", "1T052", "1T053", "1R011", "1R012", "1R013", "1R021", "1R022", "1R023", "1R024", "1R025", "1R031", "1R032", "1R033", "1R034", "1R035", "1Q010", "1Q011", "1Q012", "1Q013", "1Q014", "1Q015", "1Q016", "1Q021", "1Q022", "1Q023", "1Q024", "1Q031", "1Q032", "1Q033", "1Q034", "1P011", "1P012", "1P013", "1P014", "1P021", "1P022", "1P023", "1P024", "1P031", "1P032", "1P033", "1P034", "1O011", "1O012", "1O013", "1O014", "1O021", "1O022", "1O023", "1O024", "1O031", "1O032", "1O033", "1O034", "1O041", "1O042", "1O043", "1O044", "1N011", "1N012", "1N013", "1N014", "1N021", "1N022", "1N023", "1N024", "1N031", "1N032", "1N033", "1N034", "1N041", "1N042", "1N043", "1N044", "1N051", "1N052", "1N053", "1N054", "1M011", "1M012", "1M013", "1M014", "1M021", "1M022", "1M023", "1M024", "1M031", "1M032", "1M033", "1M034", "1M041", "1M042", "1M043", "1M044", "1M051", "1M052", "1M053", "1M054", "1L011", "1L012", "1L013", "1L014", "1L021", "1L022", "1L023", "1L024", "1L031", "1L032", "1L033", "1L034", "1L041", "1L042", "1L043", "1L044", "1L051", "1L052", "1L053", "1L054", "1K011", "1K012", "1K013", "1K014", "1K021", "1K022", "1K023", "1K024", "1K031", "1K032", "1K033", "1K034", "1K041", "1K042", "1K043", "1K044", "1K051", "1K052", "1K053", "1K054", "1J011", "1J012", "1J013", "1J014", "1J021", "1J022", "1J023", "1J024", "1J031", "1J032", "1J033", "1J034", "1J041", "1J042", "1J043", "1J044", "1J051", "1J052", "1J053", "1J054", "1I011", "1I012", "1I013", "1I014", "1I021", "1I022", "1I023", "1I024", "1I031", "1I032", "1I033", "1I034", "1I041", "1I042", "1I043", "1I044", "1I051", "1I052", "1I053", "1I054", "1H011", "1H012", "1H013", "1H014", "1H021", "1H022", "1H023", "1H024", "1H031", "1H032", "1H033", "1H034", "1H041", "1H042", "1H043", "1H044", "1H051", "1H052", "1H053", "1H054", "1G011", "1G012", "1G013", "1G014", "1G021", "1G022", "1G023", "1G024", "1G031", "1G032", "1G033", "1G034", "1G041", "1G042", "1G043", "1G044", "1G051", "1G052", "1G053", "1G054", "1F011", "1F012", "1F013", "1F014", "1F021", "1F022", "1F023", "1F024", "1F031", "1F032", "1F033", "1F034", "1F041", "1F042", "1F043", "1F044", "1F051", "1F052", "1F053", "1F054", "1E011", "1E012", "1E013", "1E014", "1E021", "1E022", "1E023", "1E024", "1E031", "1E032", "1E033", "1E034", "1D011", "1D012", "1C011", "1C012", "1C013", "1C014", "1C031", "1C032", "1C033", "1C034", "1C021", "1C022", "1C023", "1C024", "1B011", "1B012", "1B013", "1B014", "1B021", "1B022", "1B023", "1B024", "1B031", "1B032", "1B033", "1B034"];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let D=null,S=null,tab='rev',cur={z:null,r:null,i:0},msgT=null,setup={zonas:{},raw:null,name:''},fqL='',fzL='',frL='',onlyPend=false;
+/* ================= lectura del CSV ================= */
+function decodeBuf(buf){let t;try{t=new TextDecoder('utf-8',{fatal:true}).decode(buf)}catch(e){t=new TextDecoder('windows-1252').decode(buf)}return t.replace(/^\uFEFF/,'')}
+function parseCSV(text){const first=text.split(/\r?\n/,1)[0];const delim=first.split(';').length>=first.split(',').length?';':',';const rows=[];let row=[],c='',q=false;
+  for(let i=0;i<text.length;i++){const ch=text[i];
+    if(q){if(ch==='"'){if(text[i+1]==='"'){c+='"';i++}else q=false}else c+=ch}
+    else if(ch==='"')q=true;else if(ch===delim){row.push(c);c=''}
+    else if(ch==='\n'||ch==='\r'){if(ch==='\r'&&text[i+1]==='\n')i++;row.push(c);c='';rows.push(row);row=[]}else c+=ch}
+  if(c!==''||row.length){row.push(c);rows.push(row)}return rows}
+const LOC_RE=/([ABCDE])\s*([0-9]{2})\s*([0-9]{2})(?:\s*-\s*([0-9]{2}))?\s*([0-9])|(?:^|[^0-9A-Za-z])([1-9])([A-Z])\s?([0-9]{2})([0-9])(?![0-9])/g;
+function extractLocs(str){const out=[];if(!str)return out;LOC_RE.lastIndex=0;let m;
+  while((m=LOC_RE.exec(str))!==null){
+    if(m[6]){out.push({z:m[6],r:m[7],m:m[8],n:m[9],code:m[6]+m[7]+m[8]+m[9]});continue}
+    const c1=parseInt(m[3],10),c2=m[4]?parseInt(m[4],10):c1;
+    for(let c=Math.min(c1,c2);c<=Math.max(c1,c2);c++){const cc=String(c).padStart(2,'0');out.push({z:m[1],r:m[2],m:cc,n:m[5],code:m[1]+m[2]+cc+m[5]})}}
+  return out}
+function locSplit(code){ // para ubicaciones escritas a mano o del mapa
+  let m=/^([1-9])([A-Z])([0-9]{2})([0-9])$/.exec(code);if(m)return{z:m[1],r:m[2],m:m[3],n:m[4],code};
+  m=/^([A-E])([0-9]{2})([0-9]{2})([0-9])$/.exec(code);if(m)return{z:m[1],r:m[2],m:m[3],n:m[4],code};return null}
+function analizarCSV(txt,name){
+  const rows=parseCSV(txt);const h=(rows[0]||[]).map(x=>String(x||'').trim());const ix=n=>h.indexOf(n);
+  const iC=ix('Codigo'),iD=ix('Descripcion'),iU=ix('UbicacionCodigo'),i1=ix('UbicacionCodigoAlt1'),i2=ix('UbicacionCodigoAlt2'),iE=ix('Existencias');
+  if(iC<0||iU<0)throw new Error('No parece un Almacen_A.csv (faltan las columnas Codigo y UbicacionCodigo).');
+  const locs={},cat=[];let nArt=0;
+  for(let r=1;r<rows.length;r++){const x=rows[r];if(!x||!x[iC])continue;const cod=String(x[iC]).trim();if(!cod)continue;
+    const desc=String(iD>=0?x[iD]||'':'').trim().slice(0,70);const ex=iE>=0?Math.round(parseFloat(String(x[iE]||'0').replace(',','.'))||0):0;nArt++;cat.push(cod+'\t'+desc);
+    [[iU,'P'],[i1,'S'],[i2,'S']].forEach(([i,t])=>{if(i<0||!x[i])return;extractLocs(String(x[i])).forEach(l=>{
+      const o=locs[l.code]||(locs[l.code]={z:l.z,r:l.r,m:l.m,n:l.n,a:[]});
+      const e=o.a.find(a=>a[0]===cod);if(e){if(e[3].indexOf(t)<0)e[3]+=t}else o.a.push([cod,desc,ex,t])})})}
+  const zonas={};Object.keys(locs).forEach(c=>{const z=locs[c].z;(zonas[z]||(zonas[z]={n:0,art:0}));zonas[z].n++;zonas[z].art+=locs[c].a.length});
+  return{locs,cat,zonas,nArt,name}}
+function crearDatos(an,zsel,conMapa){
+  const locs={};Object.keys(an.locs).forEach(c=>{if(zsel.includes(an.locs[c].z))locs[c]=an.locs[c]});
+  if(conMapa&&zsel.includes('1'))S1CODES.forEach(c=>{if(!locs[c]){const s=locSplit(c);if(s)locs[c]={z:s.z,r:s.r,m:s.m,n:s.n,a:[]}}});
+  const where={};Object.keys(an.locs).forEach(c=>an.locs[c].a.forEach(a=>{(where[a[0]]||(where[a[0]]=[])).push(c)}));
+  const now=new Date();const p=n=>String(n).padStart(2,'0');
+  return{id:'VER-'+now.getFullYear()+p(now.getMonth()+1)+p(now.getDate())+'-'+p(now.getHours())+p(now.getMinutes()),fecha:p(now.getDate())+'/'+p(now.getMonth()+1)+'/'+now.getFullYear(),origen:an.name,zonas:zsel,locs,cat:an.cat.join('\n'),where}}
+/* ================= modelo ================= */
+const ZORD='1234567CDEAB';
+const zname=z=>/[1-9]/.test(z)?'Sector '+z:'Zona '+z;
+const rname=(z,r)=>/[1-9]/.test(z)?'Rack '+r:'Bloque '+r;
+const lshow=c=>{const s=locSplit(c);return !s?c:/[1-9]/.test(s.z)?c:s.z+s.r+' '+s.m+' '+s.n};
+const lpos=c=>{const s=locSplit(c);return !s?'':/[1-9]/.test(s.z)?'Rack '+s.r+' · Módulo '+s.m+' · Nivel '+s.n:'Bloque '+s.r+' · Columna '+s.m+' · Nivel '+s.n};
+function zonasD(){return D.zonas.slice().sort((a,b)=>ZORD.indexOf(a)-ZORD.indexOf(b))}
+function racks(z){const s=new Set();Object.keys(D.locs).forEach(c=>{if(D.locs[c].z===z)s.add(D.locs[c].r)});return [...s].sort()}
+function lista(z,r){return Object.keys(D.locs).filter(c=>D.locs[c].z===z&&D.locs[c].r===r).sort((a,b)=>{const x=D.locs[a],y=D.locs[b];return x.m.localeCompare(y.m)||x.n.localeCompare(y.n)})}
+const ST=c=>S.loc[c]||(S.loc[c]={items:{},extra:[],rev:false,nota:''});
+function lstate(c){const l=D.locs[c],s=S.loc[c];if(!s)return 'pend';const dec=l.a.filter(a=>s.items[a[0]]).length;
+  if(s.rev)return(l.a.some(a=>s.items[a[0]]==='no')||s.extra.length)?'dis':'done';
+  return(dec>0||s.extra.length)?'prog':'pend'}
+function totals(){let n=0,d=0,ok=0,no=0,ex=0,rev=0;Object.keys(D.locs).forEach(c=>{n++;const st=lstate(c);if(st==='done'||st==='dis')rev++;const s=S.loc[c];if(s){D.locs[c].a.forEach(a=>{if(s.items[a[0]]==='ok')ok++;else if(s.items[a[0]]==='no')no++});ex+=s.extra.length}});return{n,rev,ok,no,ex}}
+function save(){S.t=Date.now();try{localStorage.setItem('ver_'+D.id,JSON.stringify(S))}catch(x){}}
+function msg(t,k){const m=$('#msg');m.className=k?'m-'+k:'';m.textContent=t;clearTimeout(msgT);msgT=setTimeout(()=>{m.textContent='';m.className=''},3500)}
+function logm(c,why,det){S.log.push({t:new Date().toISOString(),loc:c,acc:why,det:det||''})}
+/* ================= acciones ================= */
+function setItem(c,cod,v){const s=ST(c);if(s.items[cod]===v)delete s.items[cod];else s.items[cod]=v;s.rev=false;if(!S.ini)S.ini=new Date().toISOString();logm(c,v,cod);save();render()}
+function okTodo(c){const s=ST(c);D.locs[c].a.forEach(a=>{if(!s.items[a[0]])s.items[a[0]]='ok'});s.rev=false;logm(c,'ok-todo');save();render()}
+function vacia(c){const l=D.locs[c],s=ST(c);if(l.a.length&&!confirm('La ubicación está vacía: los '+l.a.length+' artículo(s) del sistema se marcarán como NO ubicados. ¿Seguro?'))return;
+  l.a.forEach(a=>s.items[a[0]]='no');s.rev=true;s.vacia=true;if(!S.ini)S.ini=new Date().toISOString();logm(c,'vacia');save();msg('Ubicación marcada como vacía','ok');irSig(true)}
+function terminar(c){const l=D.locs[c],s=ST(c);const f=l.a.filter(a=>!s.items[a[0]]).length;if(f){msg('Faltan '+f+' artículo(s) por marcar (OK o No está)','er');return}
+  s.rev=true;if(!S.ini)S.ini=new Date().toISOString();logm(c,'revisada');save();msg('Ubicación revisada','ok');irSig(true)}
+function reabrir(c){ST(c).rev=false;save();render()}
+function irSig(pend){const L=lista(cur.z,cur.r);let i=cur.i+1;if(pend){while(i<L.length&&['done','dis'].includes(lstate(L[i])))i++}
+  if(i>=L.length){const t=L.filter(c=>!['done','dis'].includes(lstate(c))).length;msg(t?'Fin del rack. Quedan '+t+' ubicación(es) sin revisar en él.':'¡Rack completo!','ok');render();return}
+  cur.i=i;render();window.scrollTo(0,0)}
+function irPrev(){if(cur.i>0){cur.i--;render();window.scrollTo(0,0)}}
+function abrir(c){const l=D.locs[c];cur.z=l.z;cur.r=l.r;cur.i=lista(l.z,l.r).indexOf(c);tab='rev';render();window.scrollTo(0,0)}
+function setZona(z){cur.z=z;cur.r=racks(z)[0];cur.i=0;render()}
+function setRack(r){cur.r=r;const L=lista(cur.z,r);const f=L.findIndex(c=>!['done','dis'].includes(lstate(c)));cur.i=f<0?0:f;render()}
+function nota(c,v){ST(c).nota=v;save()}
+function otraUbic(){const v=(prompt('Código de la ubicación (p. ej. 1K052 o D02011):')||'').trim().toUpperCase().replace(/\s+/g,'');if(!v)return;const s=locSplit(v);if(!s){msg('Código no válido','er');return}
+  if(!D.locs[v]){D.locs[v]={z:s.z,r:s.r,m:s.m,n:s.n,a:[],man:true};if(!D.zonas.includes(s.z))D.zonas.push(s.z);S.man=S.man||{};S.man[v]=D.locs[v];save()}abrir(v)}
+/* artículo no registrado */
+function getCat(){if(!D._cat)D._cat=D.cat.split('\n').map(l=>{const i=l.indexOf('\t');return[l.slice(0,i),l.slice(i+1)]});return D._cat}
+function catBuscar(q){q=q.trim().toUpperCase();if(q.length<2)return[];
+  const a=[];for(const x of getCat()){if(x[0].toUpperCase().startsWith(q)){a.push(x);if(a.length>=8)break}}
+  if(a.length<8)for(const x of getCat()){if(a.length>=8)break;if(!x[0].toUpperCase().startsWith(q)&&(x[0].toUpperCase().includes(q)||x[1].toUpperCase().includes(q)))a.push(x)}return a}
+function modalExtra(c){$('#modal').style.display='block';$('#mbox').innerHTML='<h3 style="margin:0 0 8px">Artículo no registrado en '+esc(lshow(c))+'</h3><div class="desc" style="margin-bottom:8px">Está físicamente en esta ubicación pero no figura en el sistema.</div>'+
+  '<input class="fq" id="x_cod" placeholder="Código del artículo" autocomplete="off" autocapitalize="characters"><div id="x_sug"></div><input class="fi" id="x_desc" placeholder="Descripción (opcional)"><input class="fi" id="x_qty" type="number" inputmode="numeric" min="0" placeholder="Cantidad (opcional)"><input class="fi" id="x_nota" placeholder="Nota (opcional)"><div id="x_info"></div>'+
+  '<div class="row"><button class="b g" style="flex:1" onclick="cierraModal()">Cancelar</button><button class="b ok" style="flex:2" onclick="guardaExtra(\''+c+'\')">Guardar</button></div>';
+  const inp=$('#x_cod');inp.focus();inp.oninput=()=>{const q=inp.value;const r=catBuscar(q);$('#x_sug').innerHTML=r.length?'<div class="sug">'+r.map(x=>'<div data-c="'+esc(x[0])+'" data-d="'+esc(x[1])+'"><b>'+esc(x[0])+'</b> '+esc(x[1])+'</div>').join('')+'</div>':'';
+    $('#x_sug').querySelectorAll('[data-c]').forEach(e=>e.onclick=()=>{inp.value=e.dataset.c;$('#x_desc').value=e.dataset.d;$('#x_sug').innerHTML='';info(e.dataset.c)})};
+  inp.onchange=()=>info(inp.value);
+  function info(v){v=v.trim().toUpperCase();const w=D.where[v];const f=getCat().find(x=>x[0].toUpperCase()===v);if(f&&!$('#x_desc').value)$('#x_desc').value=f[1];
+    $('#x_info').innerHTML=w&&w.length?'<div class="warn">En el sistema figura en: '+w.slice(0,4).map(esc).join(', ')+(w.length>4?'…':'')+'</div>':(f?'<div class="desc">Existe en el sistema sin ubicación asignada.</div>':(v?'<div class="warn">Código no encontrado en el sistema.</div>':''))}}
+function cierraModal(){$('#modal').style.display='none'}
+function guardaExtra(c){const cod=$('#x_cod').value.trim().toUpperCase();if(!cod){msg('Indica el código del artículo','er');return}
+  const l=D.locs[c];if(l.a.some(a=>a[0].toUpperCase()===cod)){msg('Ese artículo ya figura en la ubicación: márcalo OK','er');return}
+  const s=ST(c);if(s.extra.some(e=>e.cod===cod)){msg('Ya lo has añadido','er');return}
+  s.extra.push({cod,desc:$('#x_desc').value.trim(),qty:$('#x_qty').value.trim(),nota:$('#x_nota').value.trim()});s.rev=false;if(!S.ini)S.ini=new Date().toISOString();logm(c,'no-registrado',cod);save();cierraModal();render();msg('Añadido como no registrado','ok')}
+function delExtra(c,i){const s=ST(c);const e=s.extra.splice(i,1)[0];logm(c,'quita-no-registrado',e&&e.cod);save();render()}
+/* ================= vistas ================= */
+function renderSetup(){
+  let h='<div class="card"><div class="cb"><h3 style="margin:0 0 6px">Preparar la revisión</h3><div class="desc">Carga <b>Almacen_A.csv</b> para saber qué artículos figuran en cada ubicación. El operario irá ubicación por ubicación marcando OK / No está y añadiendo lo que encuentre y no figure.</div>'+
+   '<div class="row"><input type="file" id="fcsv" accept=".csv"></div>';
+  if(setup.raw){h+='<div class="desc" style="margin:6px 0"><b>'+esc(setup.name)+'</b> · '+setup.raw.nArt.toLocaleString('es-ES')+' artículos</div><div style="margin:8px 0"><b>Zonas a revisar</b></div>';
+    Object.keys(setup.raw.zonas).sort((a,b)=>ZORD.indexOf(a)-ZORD.indexOf(b)).forEach(z=>{const o=setup.raw.zonas[z];h+='<label class="ck"><input type="checkbox" data-z="'+z+'" '+(setup.zonas[z]?'checked':'')+'><span><b>'+zname(z)+'</b> <span class="desc">· '+o.n+' ubicaciones con stock · '+o.art+' artículos</span></span></label>'});
+    h+='<label class="ck"><input type="checkbox" id="smapa" '+(setup.mapa!==false?'checked':'')+'><span>Incluir también las ubicaciones vacías del mapa del Sector 1 <span class="desc">(para poder detectar artículos no registrados)</span></span></label>'+
+    '<div class="row"><button class="b ok" style="flex:1" onclick="empezar()">Empezar revisión</button></div>'}
+  h+='</div></div>';$('#app').innerHTML=h;
+  const f=$('#fcsv');if(f)f.onchange=async e=>{const file=e.target.files[0];if(!file)return;try{setup.raw=analizarCSV(decodeBuf(await file.arrayBuffer()),file.name);setup.name=file.name;setup.zonas={};['1','C','D','E'].forEach(z=>{if(setup.raw.zonas[z])setup.zonas[z]=true});renderSetup()}catch(err){msg(err.message,'er')}};
+  document.querySelectorAll('[data-z]').forEach(e=>e.onchange=()=>{setup.zonas[e.dataset.z]=e.checked});const sm=$('#smapa');if(sm)sm.onchange=()=>{setup.mapa=sm.checked}}
+function empezar(){const zs=Object.keys(setup.zonas).filter(z=>setup.zonas[z]);if(!zs.length){msg('Elige al menos una zona','er');return}
+  D=crearDatos(setup.raw,zs,setup.mapa!==false);S={v:1,t:0,oper:'',ini:null,fin:null,loc:{},log:[]};cur={z:zonasD()[0],r:null,i:0};cur.r=racks(cur.z)[0];save();tab='rev';render()}
+function lineaArt(c,a){const s=ST(c);const v=s.items[a[0]]||'';
+  return '<div class="ln '+v+'"><div style="display:flex;justify-content:space-between;gap:6px"><div style="min-width:0"><div class="code">'+esc(a[0])+'</div><div class="ds">'+esc(a[1])+'</div></div><div style="text-align:right;white-space:nowrap"><span class="tag '+(a[3].indexOf('P')>=0?'p':'s')+'">'+(a[3]==='P'?'Picking':a[3]==='S'?'Sobrestock':'Pick.+Sobr.')+'</span><div class="desc">Stock total: '+a[2]+'</div></div></div>'+
+   '<div class="bt"><button class="b '+(v==='ok'?'ok':'g')+'" onclick="setItem(\''+c+'\',\''+esc(a[0]).replace(/'/g,'')+'\',\'ok\')">'+(v==='ok'?'✔ OK':'✔ OK')+'</button><button class="b '+(v==='no'?'er':'g')+'" onclick="setItem(\''+c+'\',\''+esc(a[0]).replace(/'/g,'')+'\',\'no\')">'+(v==='no'?'✖ No está':'✖ No está')+'</button></div></div>'}
+function renderRev(){
+  const zs=zonasD();let h='<div class="sel"><select id="sz">'+zs.map(z=>'<option value="'+z+'"'+(z===cur.z?' selected':'')+'>'+zname(z)+'</option>').join('')+'</select><select id="sr">'+racks(cur.z).map(r=>{const L=lista(cur.z,r);const d=L.filter(c=>['done','dis'].includes(lstate(c))).length;return '<option value="'+r+'"'+(r===cur.r?' selected':'')+'>'+rname(cur.z,r)+' ('+d+'/'+L.length+')</option>'}).join('')+'</select></div>';
+  const L=lista(cur.z,cur.r);if(!L.length){$('#app').innerHTML=h+'<div class="desc">No hay ubicaciones.</div>';bind();return}
+  if(cur.i>=L.length)cur.i=0;const c=L[cur.i],l=D.locs[c],s=S.loc[c]||{items:{},extra:[],rev:false,nota:''},st=lstate(c);
+  const done=L.filter(x=>['done','dis'].includes(lstate(x))).length;
+  h+='<div class="desc" style="margin-bottom:2px">Ubicación '+(cur.i+1)+' de '+L.length+' · revisadas '+done+'</div><div class="pb"><i style="width:'+Math.round(100*done/L.length)+'%"></i></div>';
+  h+='<div class="card '+(st==='done'||st==='dis'?'done':'cur')+'"><div class="cb"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><div><div style="font-size:34px;font-weight:800;line-height:1.05">'+esc(lshow(c))+'</div><div class="desc" style="font-size:14px">'+esc(lpos(c))+'</div></div>'+(s.rev?'<button class="b g sm" onclick="reabrir(\''+c+'\')">Reabrir</button>':'')+'</div>';
+  if(s.rev)h+='<div class="'+(st==='dis'?'warn':'m-ok')+'" style="padding:6px 10px;border-radius:6px;margin-top:6px">'+(st==='dis'?'✔ Revisada con diferencias':(s.vacia?'✔ Revisada: ubicación vacía':'✔ Revisada'))+'</div>';
+  h+='<div style="margin-top:8px;font-weight:700">En el sistema ('+l.a.length+')</div>';
+  h+=l.a.length?l.a.map(a=>lineaArt(c,a)).join(''):'<div class="desc" style="padding:6px 0">El sistema no tiene ningún artículo en esta ubicación.</div>';
+  if(l.a.length>1&&l.a.some(a=>!s.items[a[0]]))h+='<div class="row"><button class="b g" style="flex:1" onclick="okTodo(\''+c+'\')">✔ Marcar todos como OK</button></div>';
+  h+='<div style="margin-top:8px;font-weight:700">No registrados ('+s.extra.length+')</div>';
+  h+=s.extra.map((e,i)=>'<div class="ln ex"><div style="display:flex;justify-content:space-between;gap:6px"><div style="min-width:0"><div class="code">'+esc(e.cod)+'</div><div class="ds">'+esc(e.desc||'(sin descripción)')+(e.qty?' · '+esc(e.qty)+' uds':'')+(e.nota?' · '+esc(e.nota):'')+'</div></div><button class="b g sm" onclick="delExtra(\''+c+'\','+i+')">Quitar</button></div></div>').join('');
+  h+='<div class="row"><button class="b wa" style="flex:1" onclick="modalExtra(\''+c+'\')">➕ Hay un artículo que no figura aquí</button></div>';
+  h+='<input class="fi" placeholder="Nota de la ubicación (opcional)" value="'+esc(s.nota||'')+'" onchange="nota(\''+c+'\',this.value)">';
+  h+='</div></div><div class="row"><button class="b g" style="flex:1" onclick="otraUbic()">Otra ubicación…</button></div>';
+  $('#app').innerHTML=h;
+  $('#foot').style.display='flex';$('#foot').innerHTML='<button class="b g" onclick="irPrev()" '+(cur.i===0?'disabled':'')+'>◀</button><button class="b er" onclick="vacia(\''+c+'\')">Vacía</button><button class="b ok" style="flex:2" onclick="terminar(\''+c+'\')">✓ Terminar y siguiente</button><button class="b g" onclick="irSig(false)">▶</button>';
+  bind()}
+function bind(){const sz=$('#sz'),sr=$('#sr');if(sz)sz.onchange=()=>setZona(sz.value);if(sr)sr.onchange=()=>setRack(sr.value)}
+function renderLista(){
+  const zs=zonasD();let h='<input class="fq" id="fq" placeholder="Buscar ubicación o artículo" value="'+esc(fqL)+'" autocomplete="off"><div class="sel"><select id="lz"><option value="">Todas las zonas</option>'+zs.map(z=>'<option value="'+z+'"'+(fzL===z?' selected':'')+'>'+zname(z)+'</option>').join('')+'</select><select id="lp"><option value="0">Todas</option><option value="1"'+(onlyPend?' selected':'')+'>Solo pendientes</option></select></div><div id="lres"></div>';
+  $('#app').innerHTML=h;const f=()=>{fqL=$('#fq').value;fzL=$('#lz').value;onlyPend=$('#lp').value==='1';pintaLista()};$('#fq').oninput=f;$('#lz').onchange=f;$('#lp').onchange=f;pintaLista()}
+function pintaLista(){const q=fqL.trim().toUpperCase().replace(/\s+/g,'');let cs=Object.keys(D.locs);
+  cs=cs.filter(c=>(!fzL||D.locs[c].z===fzL)&&(!onlyPend||!['done','dis'].includes(lstate(c)))&&(!q||c.includes(q)||D.locs[c].a.some(a=>a[0].toUpperCase().includes(q)||a[1].toUpperCase().includes(q))));
+  cs.sort((a,b)=>{const x=D.locs[a],y=D.locs[b];return ZORD.indexOf(x.z)-ZORD.indexOf(y.z)||x.r.localeCompare(y.r)||x.m.localeCompare(y.m)||x.n.localeCompare(y.n)});
+  const tot=cs.length;cs=cs.slice(0,300);const NM={pend:'Pendiente',prog:'En curso',done:'Revisada',dis:'Con diferencias'};
+  $('#lres').innerHTML='<div class="desc" style="margin-bottom:4px">'+tot+' ubicación(es)'+(tot>300?' · se muestran 300, afina la búsqueda':'')+'</div><div class="card">'+cs.map(c=>{const st=lstate(c),l=D.locs[c];return '<div class="lrow '+st+'" onclick="abrir(\''+c+'\')"><b>'+esc(lshow(c))+'</b><span class="desc">'+l.a.length+' art.'+(S.loc[c]&&S.loc[c].extra.length?' · +'+S.loc[c].extra.length+' no reg.':'')+'</span><span class="st">'+NM[st]+'</span></div>'}).join('')+'</div>'}
+function filas(){const f=[];const t=S.oper||'';Object.keys(D.locs).forEach(c=>{const l=D.locs[c],s=S.loc[c]||{items:{},extra:[]};const base=[zname(l.z),rname(l.z,l.r),lshow(c)];
+  l.a.forEach(a=>{const v=s.items[a[0]];f.push(base.concat([a[0],a[1],a[3]==='P'?'Picking':a[3]==='S'?'Sobrestock':'Picking+Sobrestock',v==='ok'?'OK':v==='no'?'NO ESTÁ':'PENDIENTE','',s.nota||'']))});
+  s.extra.forEach(e=>f.push(base.concat([e.cod,e.desc||'','No registrado','NO REGISTRADO EN SISTEMA',e.qty||'',[e.nota,s.nota].filter(Boolean).join(' | ')])));
+  if(!l.a.length&&!s.extra.length&&s.rev)f.push(base.concat(['','','','UBICACIÓN VACÍA (OK)','',s.nota||'']))});return f}
+const HEAD=['Zona','Rack/Bloque','Ubicación','Artículo','Descripción','Tipo','Resultado','Cantidad','Nota'];
+function exportar(){const f=filas();const dis=f.filter(r=>/NO ESTÁ|NO REGISTRADO/.test(r[6]));const t=totals();
+  if(typeof XLSX!=='undefined'){const wb=XLSX.utils.book_new();
+    const res=[['Verificación de ubicaciones',D.id],['Fecha',D.fecha],['Operario',S.oper||''],['Origen',D.origen],['Ubicaciones',t.n],['Revisadas',t.rev],['Artículos OK',t.ok],['Artículos NO ESTÁN',t.no],['Artículos no registrados',t.ex]];
+    XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(res),'Resumen');
+    const w1=XLSX.utils.aoa_to_sheet([HEAD].concat(dis));w1['!cols']=[{wch:10},{wch:11},{wch:11},{wch:18},{wch:40},{wch:14},{wch:24},{wch:9},{wch:30}];XLSX.utils.book_append_sheet(wb,w1,'Discrepancias');
+    const w2=XLSX.utils.aoa_to_sheet([HEAD].concat(f));w2['!cols']=w1['!cols'];XLSX.utils.book_append_sheet(wb,w2,'Revisión completa');
+    XLSX.writeFile(wb,'VERIFICACION_UBICACIONES_'+stamp()+'.xlsx')}
+  else{const csv='\uFEFF'+[HEAD].concat(f).map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\n');dl('VERIFICACION_UBICACIONES_'+stamp()+'.csv',csv,'text/csv')}
+  msg('Resultado descargado','ok')}
+function renderRes(){const t=totals();const f=filas().filter(r=>/NO ESTÁ|NO REGISTRADO/.test(r[6]));const pend=t.n-t.rev;
+  let h='<div class="card"><div class="cb"><h3 style="margin:0 0 6px">Resumen</h3><div class="kp"><div><b>'+t.rev+'/'+t.n+'</b><span>ubicaciones revisadas</span></div><div><b style="color:var(--ok)">'+t.ok+'</b><span>artículos OK</span></div><div><b style="color:var(--er)">'+t.no+'</b><span>no están</span></div><div><b style="color:var(--wa)">'+t.ex+'</b><span>no registrados</span></div></div>'+
+   (pend?'<div class="warn">'+pend+' ubicación(es) sin revisar.</div>':'<div class="m-ok" style="padding:8px;border-radius:6px">✔ Todas las ubicaciones revisadas</div>')+
+   '<div class="row"><button class="b ok" style="flex:1" onclick="exportar()">📊 Descargar resultado (Excel)</button></div><div class="row"><button class="b g" onclick="guardar()">💾 Guardar progreso (HTML)</button><button class="b g" onclick="paraPDA()">📲 Archivo limpio para la PDA</button><button class="b er" onclick="reset()">Reiniciar</button></div></div></div>';
+  h+='<div class="card"><div class="cb"><h3 style="margin:0 0 6px">Discrepancias ('+f.length+')</h3>'+(f.length?'<table><tr><th>Ubicación</th><th>Artículo</th><th>Resultado</th></tr>'+f.map(r=>'<tr><td>'+esc(r[2])+'</td><td><b>'+esc(r[3])+'</b><div class="desc">'+esc(r[4])+(r[7]?' · '+esc(r[7])+' uds':'')+'</div></td><td>'+(r[6]==='NO ESTÁ'?'<span style="color:var(--er);font-weight:600">No está</span>':'<span style="color:var(--wa);font-weight:600">No registrado</span>')+'</td></tr>').join('')+'</table>':'<div class="desc">Ninguna por ahora.</div>')+'</div></div>';
+  $('#app').innerHTML=h}
+/* ================= salida ================= */
+const stamp=()=>new Date().toISOString().slice(0,16).replace(/[-:T]/g,'');
+function dl(name,txt,mime){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:mime||'text/html'}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function snapshot(conEstado){const c=document.documentElement.cloneNode(true);c.querySelector('#app').innerHTML='';c.querySelector('#msg').innerHTML='';c.querySelector('#foot').innerHTML='';c.querySelector('#mbox').innerHTML='';c.querySelector('#modal').removeAttribute('style');
+  const d2=Object.assign({},D);delete d2._cat;if(S&&S.man)Object.keys(S.man).forEach(k=>d2.locs[k]=S.man[k]);
+  c.querySelector('#ver-datos').textContent=JSON.stringify(d2).replace(/<\//g,'<\\/');c.querySelector('#ver-estado').textContent=conEstado?JSON.stringify(S).replace(/<\//g,'<\\/'):'null';return '<!DOCTYPE html>\n'+c.outerHTML}
+function guardar(){save();dl('VERIFICACION_PROGRESO_'+stamp()+'.html',snapshot(true));msg('Progreso guardado','ok')}
+function paraPDA(){dl('VERIFICACION_PDA_'+D.id+'.html',snapshot(false));msg('Archivo para la PDA descargado','ok')}
+function reset(){if(!confirm('Se borrará todo el progreso de esta revisión. ¿Seguro?'))return;S={v:1,t:0,oper:S.oper,ini:null,fin:null,loc:{},log:[]};save();tab='rev';render()}
+/* ================= render ================= */
+function render(){
+  if(!D){$('#hprog').textContent='Sin datos';$('#hbar').style.width='0';$('#foot').style.display='none';document.querySelectorAll('#nav button').forEach(b=>b.style.display='none');renderSetup();return}
+  document.querySelectorAll('#nav button').forEach(b=>{b.style.display='';b.classList.toggle('on',b.dataset.t===tab)});
+  const t=totals();$('#hprog').textContent=t.rev+'/'+t.n+' ubicaciones';$('#hbar').style.width=(t.n?100*t.rev/t.n:0)+'%';$('#oper').value=S.oper||'';$('#fecha').textContent=D.fecha;
+  $('#foot').style.display=tab==='rev'?'flex':'none';
+  if(tab==='rev'){if(!cur.z){cur.z=zonasD()[0];cur.r=racks(cur.z)[0]}renderRev()}else if(tab==='lista')renderLista();else renderRes()}
+$('#nav').onclick=e=>{if(e.target.dataset.t){tab=e.target.dataset.t;render();window.scrollTo(0,0)}};
+$('#oper').onchange=e=>{if(S){S.oper=e.target.value;save()}};
+function init(){let d=null;try{d=JSON.parse($('#ver-datos').textContent)}catch(x){}
+  if(d){D=d;let e=null;try{e=JSON.parse($('#ver-estado').textContent)}catch(x){}let l=null;try{l=JSON.parse(localStorage.getItem('ver_'+D.id))}catch(x){}
+    const p=(e&&l)?((l.t||0)>(e.t||0)?l:e):(e||l);S=p&&p.v===1?p:{v:1,t:0,oper:'',ini:null,fin:null,loc:{},log:[]};
+    if(S.man)Object.keys(S.man).forEach(k=>{if(!D.locs[k])D.locs[k]=S.man[k]});
+    cur.z=zonasD()[0];cur.r=racks(cur.z)[0];
+    const f=lista(cur.z,cur.r).findIndex(c=>!['done','dis'].includes(lstate(c)));cur.i=f<0?0:f}
+  render()}
+init();
+</script></body></html>
